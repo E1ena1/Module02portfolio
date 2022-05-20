@@ -1,4 +1,70 @@
-$bg: #ff0;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+$red: #D40000;
+$main-color: #232326;
+$font-color: #F3F2F0;
+$white: #FFFFFF;
+
+html {
+  font-size: 10px;
+}
+
 body {
-  background-color: $bg;
+  background-color: $main-color;
+  font-family: 'Inter', sans-serif;
+  color: $font-color;
+}
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 4rem;
+  width: 100%;
+  &__navigation {
+    flex-basis: 50%;
+  }
+  &__nav {
+    display: flex;
+    padding-left: 0;
+    gap: 2.9rem;
+  }
+  &__item {
+    list-style-type: none;
+    &_tel {
+      list-style-type: none;
+    }
+    &_mail {
+      list-style-type: none;
+    }
+  }
+  &__link {
+    color: $font-color;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    text-decoration: none;
+  }
+  &__info {
+    display: flex;
+    padding-left: 0;
+    flex-basis: 30%;
+    justify-content: flex-end;
+    gap: 2.5rem;
+  }
+  &__tel {
+    color: $font-color;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    text-decoration: none;
+  }
+  &__mail {
+    color: $font-color;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    text-decoration: none;
+  }
 }
