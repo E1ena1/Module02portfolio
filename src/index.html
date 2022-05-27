@@ -348,8 +348,98 @@
             </div>
         </div>
     </section>
+    <section class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-grid__item-1">
+                    <h2 class="contact-grid__title">Расскажите о своем проекте</h2>
+                </div>
+                <div class="contact-grid__item-2">
+                    <p class="contact-grid__description">Воспользуйтесь формой обратной связи, чтобы обсудить ваш проект, заполните все поля, и я свяжусь с вами в ближайшее время</p>
+                </div>
+            </div>
+            <hr class="line">
+            <div class="contact-grid">
+                <div class="contact-grid__item-1">
+                    <ul class="contact-grid__social">
+                        <li class="contact-grid__social-item">
+                            <a class="contact-grid__social-link contact-grid__link-vk" href="#">Vk</a>
+                        </li>
+                        <li class="contact-grid__social-item">
+                            <a class="contact-grid__social-link contact-grid__link-inst" href="#">Instagram</a>
+                        </li>
+                        <li class="contact-grid__social-item">
+                            <a class="contact-grid__social-link contact-grid__link-linkedin" href="#">Linkedin</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-grid__item-2">
+                    <div class="card">
+                        <form>
+                            <label class="card__label">Телефон или почта</label>
+                            <input class="card__input" placeholder="Введите телефон">
+                            <label class="card__label">Выберите удобный способ связи</label>
+                            <label class="drop">
+                                <input type="checkbox" id="target-drop-example">
+                                <span class="control">Telegram</span>
+                                <!-- Items -->
+                                <ul class="drop-items">
+                                    <li class="item-drop">
+                                        <a href="tel:123456789">Звонок на телефон</a></li>
+                                    <li class="item-drop">
+                                        <a target="_blank" href="https://www.whatsapp.com/">WhatsApp</a></li>
+                                    <li class="item-drop">
+                                        <a href="tel:123456789">SMS сообщение</a></li>
+                                </ul>
+                                <!-- Alternative to close dropdown with click out -->
+                                <label for="target-drop-example" class="overlay-close"></label>
+                            </label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr class="line">
+        </div>
+    </section>
 </main>
-
-<footer></footer>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__top">
+            <div class="header">
+                <nav class="header__navigation">
+                    <ul class="header__nav">
+                        <li class="header__item">
+                            <a href="#" class="header__link">Обо мне</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="#" class="header__link">Портфолио</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="#" class="header__link">Этапы работ</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="#" class="header__link">Цены</a>
+                        </li>
+                        <li class="header__item">
+                            <a href="#" class="header__link"> Обратная связь</a>
+                        </li>
+                    </ul>
+                </nav>
+                <ul class="header__info">
+                    <li class="header__item_tel">
+                        <a href="tel:89237777777"class="header__tel">8 923 777-77-77</a>
+                    </li>
+                    <li class="header__item_mail">
+                        <a href="mailto:alexdev@gmail.com" class="header__mail">alexdev@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>© 2020, Все права защищены</p>
+            <p>Сделано в рамках курса учебной платформы <a href="https://www.youtube.com/c/%D0%90%D0%BD%D0%BD%D0%B0%D0%91%D0%BB%D0%BE%D0%BA">Frontend Blok</a></p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
