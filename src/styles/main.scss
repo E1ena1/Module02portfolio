@@ -4,7 +4,7 @@ $main-color: #232326;
 $main-color-dark: #141416;
 $font-color: #F3F2F0;
 $white: #FFFFFF;
-$color-primary-theme: #30336b;
+
 
 $r_minmob: 320px;
 $r_mob_360: 360px;
@@ -46,9 +46,15 @@ html {
   font-weight: 700;
 }
 
+@mixin text ($size: null, $line-height: null, $weight: null, $color: null) {
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
+  color: $color;
+}
 
 body {
-  background: linear-gradient(to bottom, $main-color 63.40%, $main-color-dark 40%);
+  background: linear-gradient(to bottom, $main-color 37%, $main-color-dark 37%);
   font-family: 'Inter', sans-serif;
   color: $font-color;
 }
@@ -101,9 +107,7 @@ header {
     }
   }
   &__link {
-    color: $font-color;
-    font-size: 1.4rem;
-    line-height: 2.1rem;
+    @include text(1.4rem, 2.1rem, $color:$font-color);
     text-decoration: none;
     transition: .3s;
     &:hover {
@@ -118,9 +122,7 @@ header {
     gap: 2.5rem;
   }
   &__tel {
-    color: $font-color;
-    font-size: 1.4rem;
-    line-height: 2.1rem;
+    @include text(1.4rem, 2.1rem, $color:$font-color);
     text-decoration: none;
     transition: .3s;
     &:hover {
@@ -128,9 +130,7 @@ header {
     }
   }
   &__mail {
-    color: $font-color;
-    font-size: 1.4rem;
-    line-height: 2.1rem;
+    @include text(1.4rem, 2.1rem, $color:$font-color);
     text-decoration: none;
     transition: .3s;
     &:hover {
@@ -191,16 +191,14 @@ header {
     }
     &__item {
       &-title {
-        font-size: 1.6rem;
-        font-weight: 700;
+        @include text(1.6rem, $weight:700);
         letter-spacing: 0.03rem;
         text-transform: uppercase;
       }
       &-text {
-        font-size: 1.4rem;
+        @include text(1.4rem, 2.1rem);
         opacity: .8;
         max-width: 250px;
-        line-height: 2.1rem;
       }
     }
     &__item-1 {
@@ -259,9 +257,8 @@ header {
         list-style-type: none;
       }
       &-link {
+        @include text(1.6rem, $color:$font-color);
         text-decoration: none;
-        color: $font-color;
-        font-size: 1.6rem;
         text-transform: capitalize;
         transition: .3s;
         &:hover {
@@ -927,7 +924,7 @@ header {
   &__btn {
     font-size: 1.6rem;
     text-align: center;
-    padding: 23px 237px;
+    padding: 24px 238px;
     background-color: $red;
     color: $font-color;
     cursor: pointer;
