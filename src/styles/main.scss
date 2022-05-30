@@ -210,32 +210,32 @@ header {
       grid-column: 4/5;
       grid-row: 1/2;
     }
-    //&__link {
-    //  &-vk {
-    //    position: relative;
-    //    &::after {
-    //      content: '';
-    //      height: 2.4rem;
-    //      border: 1px solid $font-color;
-    //      position: absolute;
-    //      top: 1px;
-    //      right: -31px;
-    //      pointer-events: none;
-    //    }
-    //  }
-    //  &-inst {
-    //    position: relative;
-    //    &::after {
-    //      content: '';
-    //      height: 2.4rem;
-    //      border: 1px solid $font-color;
-    //      position: absolute;
-    //      top: 1px;
-    //      right: -31px;
-    //      pointer-events: none;
-    //    }
-    //  }
-    //}
+    &__link {
+      &-vk {
+        position: relative;
+        &::after {
+          content: '';
+          height: 2.4rem;
+          border: 1px solid $font-color;
+          position: absolute;
+          top: 1px;
+          right: -31px;
+          pointer-events: none;
+        }
+      }
+      &-inst {
+        position: relative;
+        &::after {
+          content: '';
+          height: 2.4rem;
+          border: 1px solid $font-color;
+          position: absolute;
+          top: 1px;
+          right: -31px;
+          pointer-events: none;
+        }
+      }
+    }
     &__social {
       display: flex;
       justify-content: flex-end;
