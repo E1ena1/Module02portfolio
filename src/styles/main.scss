@@ -54,7 +54,8 @@ html {
 }
 
 body {
-  background: linear-gradient(to bottom, $main-color 37%, $main-color-dark 37%);
+  //background: linear-gradient(to bottom, $main-color 37%, $main-color-dark 37%);
+  background-color: $main-color;
   font-family: 'Inter', sans-serif;
   color: $font-color;
 }
@@ -209,32 +210,32 @@ header {
       grid-column: 4/5;
       grid-row: 1/2;
     }
-    &__link {
-      &-vk {
-        position: relative;
-        &::after {
-          content: '';
-          height: 2.4rem;
-          border: 1px solid $font-color;
-          position: absolute;
-          top: 1px;
-          right: -31px;
-          pointer-events: none;
-        }
-      }
-      &-inst {
-        position: relative;
-        &::after {
-          content: '';
-          height: 2.4rem;
-          border: 1px solid $font-color;
-          position: absolute;
-          top: 1px;
-          right: -31px;
-          pointer-events: none;
-        }
-      }
-    }
+    //&__link {
+    //  &-vk {
+    //    position: relative;
+    //    &::after {
+    //      content: '';
+    //      height: 2.4rem;
+    //      border: 1px solid $font-color;
+    //      position: absolute;
+    //      top: 1px;
+    //      right: -31px;
+    //      pointer-events: none;
+    //    }
+    //  }
+    //  &-inst {
+    //    position: relative;
+    //    &::after {
+    //      content: '';
+    //      height: 2.4rem;
+    //      border: 1px solid $font-color;
+    //      position: absolute;
+    //      top: 1px;
+    //      right: -31px;
+    //      pointer-events: none;
+    //    }
+    //  }
+    //}
     &__social {
       display: flex;
       justify-content: flex-end;
@@ -426,6 +427,18 @@ header {
 
 .portfolio {
   margin-bottom: 100px;
+  position: relative;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 901px;
+    position: absolute;
+    top: 228px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, #151416 0%, rgba(20, 20, 22, 0) 100%);
+    z-index: -2;
+  }
   &__main-title {
     @include title;
     margin: 40px 0 206px 0;
@@ -447,6 +460,7 @@ header {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     margin: 60px 0;
+    gap: 1.6rem;
     &__item-1 {
       grid-column: 1/3;
     }
@@ -905,7 +919,7 @@ header {
     box-sizing: border-box;
     width: 100%;
     height: 40px;
-    background-color: $main-color;
+    background-color: rgba($font-color, .1);
     border: none;
     color: $font-color;
     padding: 32px 21px;
@@ -924,10 +938,11 @@ header {
   &__btn {
     font-size: 1.6rem;
     text-align: center;
-    padding: 24px 238px;
+    padding: 23px 237px;
     background-color: $red;
     color: $font-color;
     cursor: pointer;
+    border: 1px solid #D40000;
   }
 }
 
@@ -963,7 +978,8 @@ header {
     display:block;
     cursor: pointer;
     padding: 27px 10px 23px 18px;
-    background: $main-color;
+    //background: $main-color;
+    background-color: rgba($font-color, .1);
     transition: all .3s ease;
     &:after{
       content:"";
@@ -987,6 +1003,7 @@ header {
     margin:0;
     transition: all .3s ease;
     background: $main-color;
+    //background-color: rgba($font-color, .1);
     box-shadow: 0 2px 6px rgba(0,0,0,.15);
     overflow:hidden;
     max-height:0;
@@ -994,17 +1011,21 @@ header {
     z-index:99;
     .item-drop {
       list-style:none;
+      background-color: rgba($font-color, .1);
       a {
         font-size: 1.2rem;
         display:block;
         color: rgba($font-color, .2);
         text-decoration: none;
-        padding: 0px 10px 13px 21px;
+        padding: 0 10px 13px 21px;
         transition: all .3s ease;
         &:hover {
           color: rgba($font-color, 1);
         }
       }
+    }
+    .item-drop:last-child {
+      padding-bottom: 2px;
     }
   }
 
