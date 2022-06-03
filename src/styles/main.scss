@@ -27,24 +27,6 @@ html {
   font-size: 10px;
 }
 
-@mixin font-size-28 {
-  font-weight: 400;
-  font-size: 28px;
-}
-@mixin title {
-  font-weight: 700;
-  font-size: 74px;
-  text-transform: uppercase;
-}
-@mixin title-bold-28 {
-  font-weight: 700;
-  font-size: 28px;
-  text-transform: uppercase;
-}
-@mixin bold-16 {
-  font-size: 16px;
-  font-weight: 700;
-}
 
 @mixin text ($size: null, $line-height: null, $weight: null, $color: null) {
   font-size: $size;
@@ -121,6 +103,8 @@ header {
     flex-basis: 30%;
     justify-content: flex-end;
     gap: 2.5rem;
+    margin-top: 1.2rem;
+    letter-spacing: 0.06px;
   }
   &__tel {
     @include text(1.4rem, 2.1rem, $color:$font-color);
@@ -157,7 +141,7 @@ header {
   &__header {
     margin-bottom: 10rem;
     &_h2 {
-      @include font-size-28;
+      @include text (2.8rem, $weight:400);
       position: relative;
       &::before {
         content: ' ';
@@ -298,13 +282,13 @@ header {
     gap: 2rem;
     margin-bottom: 3rem;
     &__title {
-      @include title-bold-28;
+      @include text(2.8rem, $weight:700);
+      text-transform: uppercase;
       margin-top: 3.2rem;
       letter-spacing: 0.07rem;
     }
     &__description {
-      @include font-size-28;
-      line-height: 4.2rem;
+      @include text(2.8rem, 4.2rem, $weight:400);
       max-width: 560px;
     }
     &__item-1 {
@@ -340,20 +324,17 @@ header {
     }
   }
     &_title {
-      @include bold-16;
-      line-height: 3.2rem;
+      @include text(1.6rem, 3.2rem, $weight:700);
     }
     &_desc {
-      font-size: 1.4rem;
-      line-height: 2.1rem;
+      @include text(1.4rem, 2.1rem);
       opacity: .8;
       max-width: 270px;
     }
   }
   &__order {
     &_title {
-      @include font-size-28;
-      line-height: 4.2rem;
+      @include text(2.8rem, 4.2rem, $weight:400);
       margin: 3rem 0 2.8rem 0;
     }
     &_number {
@@ -420,7 +401,8 @@ header {
 }
 
 .title {
-  @include title;
+  @include text(7.4rem, $weight:700);
+  text-transform: uppercase;
   letter-spacing: 0.23rem;
   margin-top: 39px;
 }
@@ -440,7 +422,8 @@ header {
     z-index: -2;
   }
   &__main-title {
-    @include title;
+    @include text(7.4rem, $weight:700);
+    text-transform: uppercase;
     margin: 40px 0 206px 0;
     position: relative;
     &::after {
@@ -712,7 +695,8 @@ header {
     justify-content: space-between;
     margin-bottom: 50px;
   &_title{
-    @include title-bold-28;
+    @include text(2.8rem, $weight:700);
+    text-transform: uppercase;
     position: relative;
     letter-spacing: 0.09rem;
     margin-top: 3.3rem;
@@ -730,8 +714,7 @@ header {
     }
   }
     &_desc {
-      @include font-size-28;
-      line-height: 4.2rem;
+      @include text(2.8rem, 4.2rem, $weight:400);
       opacity: .8;
       max-width: 559px;
     }
@@ -749,18 +732,15 @@ header {
       grid-column: 3/5;
     }
     &__title {
-      @include font-size-28;
-      line-height: 4.2rem;
+      @include text(2.8rem, 4.2rem, $weight:400);
       letter-spacing: 0.04rem;
     }
     &__desc {
       font-size: 1.6rem;
-      //line-height: 2.4rem;
       margin-bottom: 76px;
     }
     &__topic {
-      @include bold-16;
-      line-height: 2.4rem;
+      @include text(1.6rem, 2.4rem, $weight:700);
       margin: 23px 0 19px 0;
     }
     &__list {
@@ -873,9 +853,8 @@ header {
       }
     }
     &__title {
-      @include title-bold-28;
+      @include text(2.8rem, 4.2rem, $weight:700);
       letter-spacing: 0.08rem;
-      line-height: 4.2rem;
       position: relative;
       &::before {
         content: '';
@@ -901,8 +880,7 @@ header {
       }
     }
     &__description {
-      @include font-size-28;
-      line-height: 4.2rem;
+      @include text(2.8rem, 4.2rem, $weight:400);
       margin-top: 22px;
       margin-bottom: 10px;
     }
