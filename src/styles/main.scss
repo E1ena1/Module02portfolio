@@ -12,8 +12,8 @@ $r_mob_400: 400px;
 $r_mob_500: 500px;
 $r_mob_600: 600px;
 $r_tab: 768px;
-$r_tab_900: 900px;
 $r_800: 800px;
+$r_tab_900: 900px;
 $r_desk: 1000px;
 $r_desk_1100: 1100px;
 $r_desk_hd: 1200px;
@@ -83,6 +83,13 @@ header {
   @media (max-width: $r_mob_500) {
     justify-content: flex-start;
     gap: 19.1rem;
+    padding-top: 8px;
+  }
+  @media (max-width: $r_mob_400) {
+    gap: 15rem;
+  }
+  @media (max-width: $r_mob_360) {
+    gap: 5vw;
   }
   &__navigation {
     flex-basis: 50%;
@@ -185,21 +192,34 @@ header {
 
 .main {
   margin-top: 134px;
+  @media (max-width: $r_desk) {
+    margin-top: 100px;
+  }
   @media (max-width: $r_800) {
     margin-top: 85px;
   }
   @media (max-width: $r_mob_500) {
-    margin-top: 94px;
+    margin-top: 82px;
   }
   &__info {
     margin-bottom: 90px;
+    @media (max-width: $r_desk) {
+      margin-bottom: 45px;
+    }
   }
   &__bg {
     margin-bottom: 12.2rem;
+    @media (max-width: $r_desk_1350) {
+      margin-bottom: 8.2rem;
+    }
+    @media (max-width: $r_desk_1280) {
+      margin-bottom: 4.2rem;
+    }
   }
   &__cover {
     max-width: 1140px;
     height: 310px;
+    position: relative;
     @media (max-width: $r_desk_hd) {
       max-width: 1049px;
       height: 280px;
@@ -211,42 +231,35 @@ header {
     }
     @media (max-width: $r_desk) {
       max-width: 753px;
-      height: 200px;
+      height: 164px;
     }
     @media (max-width: $r_800) {
-      max-width: 600px;
-      height: 174px;
-    }
-    @media (max-width: $r_tab) {
-      max-width: 545px;
-      height: 167px;
-    }
-    @media (max-width: $r_mob_600) {
-      max-width: 456px;
-      height: 132px;
-    }
-    @media (max-width: $r_mob_500) {
-      max-width: 349px;
-      height: 105px;
-    }
-    @media (max-width: $r_mob_400) {
-      max-width: 270px;
-      height: 83px;
-    }
-    @media (max-width: $r_minmob) {
-      max-width: 250px;
-      height: 73px;
+      height: 150px;
     }
   }
   &__photo {
     width: 100%;
     height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    @media (max-width: $r_mob_500) {
+      object-fit: cover;
+    }
   }
   &__header {
     margin-bottom: 10rem;
+    @media (max-width: $r_desk_1280) {
+      margin-bottom: 8rem;
+    }
     &_h2 {
       @include text (2.8rem, $weight:400);
       position: relative;
+      @media (max-width: $r_desk_1280) {
+        font-size: 2rem;
+      }
       &::before {
         content: ' ';
         width: 253px;
@@ -257,6 +270,22 @@ header {
         top: -62px;
         left: -127px;
         z-index: -1;
+        @media (max-width: $r_desk_1500) {
+          width: 220px;
+          height: 220px;
+        }
+        @media (max-width: $r_desk_1400) {
+          width: 210px;
+          height: 210px;
+          top: -21px;
+          left: -74px;
+        }
+        @media (max-width: $r_desk_1280) {
+          width: 150px;
+          height: 150px;
+          top: 0;
+          left: -44px;
+        }
       }
       &::after {
         content: ' ';
@@ -268,6 +297,19 @@ header {
         position: absolute;
         top: -24px;
         left: -150px;
+        @media (max-width: $r_desk_1500) {
+          top: 102px;
+          left: -113px;
+        }
+        @media (max-width: $r_desk_1400) {
+          top: 147px;
+          left: -59px;
+        }
+        @media (max-width: $r_desk_1280) {
+          top: 120px;
+          left: -11px;
+          background-size: 51px 45px;
+        }
       }
     }
   }
@@ -293,6 +335,9 @@ header {
     &__item-1 {
       grid-column: 1/2;
       grid-row: 1/2;
+      @media (max-width: $r_desk) {
+        grid-column: 1/3;
+      }
     }
     &__item-2 {
       grid-column: 4/5;
@@ -357,23 +402,48 @@ header {
       }
     }
     &__items {
-      display: flex;
+      display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 4rem;
       padding-top: 50px;
       padding-bottom: 50px;
+      @media (max-width: $r_desk_hd) {
+        gap: 1.5rem;
+      }
+      @media (max-width: $r_desk) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        padding-top: 27px;
+        padding-bottom: 0;
+      }
     }
     &__item-3 {
       grid-column: 1/2;
+      @media (max-width: $r_desk) {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
     }
     &__item-4 {
       grid-column: 2/3;
+      @media (max-width: $r_desk) {
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
     }
     &__item-5 {
       grid-column: 3/4;
+      @media (max-width: $r_desk) {
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
     }
     &__item-6 {
       grid-column: 4/5;
+      @media (max-width: $r_desk) {
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
     }
   }
 }
@@ -405,6 +475,9 @@ header {
   &__bottom {
     padding-bottom: 16.4rem;
     padding-top: 4.4rem;
+    @media (max-width: $r_desk) {
+      padding-bottom: 6.4rem;
+    }
     &-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -443,6 +516,9 @@ header {
     }
     &_number {
       padding-right: 3.3rem;
+      @media (max-width: $r_desk) {
+        padding-right: 1.2rem;
+      }
     }
     &_desc {
       font-size: 1.6rem;
@@ -509,6 +585,13 @@ header {
   text-transform: uppercase;
   letter-spacing: 0.23rem;
   margin-top: 39px;
+  @media (max-width: $r_desk_1280) {
+    margin-top: 18px;
+    font-size: 6rem;
+  }
+  @media (max-width: $r_desk) {
+    font-size: 5rem;
+  }
 }
 
 .portfolio {
@@ -530,6 +613,13 @@ header {
     text-transform: uppercase;
     margin: 40px 0 206px 0;
     position: relative;
+    @media (max-width: $r_desk_1280) {
+      font-size: 6rem;
+      margin: 40px 0 179px 0;
+    }
+    @media (max-width: $r_desk) {
+      font-size: 5rem;
+    }
     &::after {
       content: "";
       width: 465px;
@@ -541,6 +631,12 @@ header {
       top: -94px;
       left: 348px;
       z-index: -1;
+      @media (max-width: $r_desk-hd) {
+        width: 399px;
+        height: 400px;
+        top: -104px;
+        left: 301px;
+      }
     }
   }
   &-grid {
@@ -612,6 +708,12 @@ header {
     margin-top: 50px;
     gap: 33px 23px;
     margin-bottom: 164px;
+    @media (max-width: $r_desk_1100) {
+      gap: 23px 10px;
+    }
+    @media (max-width: $r_desk) {
+      grid-template-columns: repeat(2, 1fr);
+    }
     &__item {
       background-repeat: no-repeat;
       display: flex;
