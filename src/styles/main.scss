@@ -13,6 +13,7 @@ $r_mob_500: 500px;
 $r_mob_600: 600px;
 $r_tab: 768px;
 $r_tab_900: 900px;
+$r_800: 800px;
 $r_desk: 1000px;
 $r_desk_1100: 1100px;
 $r_desk_hd: 1200px;
@@ -53,6 +54,12 @@ body {
   @media (max-width: $r_desk) {
     max-width: 738px;
   }
+  @media (max-width: $r_tab)  {
+    max-width: 600px;
+  }
+  @media (max-width: $r_mob_500)  {
+    max-width: 357px;
+  }
 }
 
 header {
@@ -69,10 +76,21 @@ header {
   padding-top: 4rem;
   padding-bottom: 2.3rem;
   width: 100%;
+  @media (max-width: $r_800) {
+    padding-top: 2rem;
+    padding-bottom: 0.3rem;
+  }
+  @media (max-width: $r_mob_500) {
+    justify-content: flex-start;
+    gap: 19.1rem;
+  }
   &__navigation {
     flex-basis: 50%;
     @media (max-width: $r_desk_1100) {
       flex-basis: 60%;
+    }
+    @media (max-width: $r_tab) {
+      display: none;
     }
   }
   &__nav {
@@ -80,7 +98,7 @@ header {
     padding-left: 0;
     gap: 2.84rem;
     @media (max-width: $r_desk) {
-      gap: 1.84rem;
+      gap: 1.4rem;
     }
   }
   &__item {
@@ -95,6 +113,9 @@ header {
         position: absolute;
         top: -1px;
         right: -13px;
+        @media (max-width: $r_tab) {
+          display: none;
+        }
       }
     }
     &_mail {
@@ -120,6 +141,11 @@ header {
     @media (max-width: $r_desk_1100) {
       flex-basis: 40%;
     }
+    @media (max-width: $r_tab) {
+      justify-content: flex-start;
+      flex-basis: content;
+      gap: 1rem;
+    }
   }
   &__tel {
     @include text(1.4rem, 2.1rem, $color:$font-color);
@@ -136,11 +162,35 @@ header {
     &:hover {
       color: $red;
     }
+    @media (max-width: $r_tab) {
+      display: none;
+    }
+  }
+  &__burger-btn {
+    width: 26px;
+    height: 20px;
+    background-image: url("../images/burger.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    background-color: inherit;
+    align-self: center;
+    display: none;
+    @media (max-width: $r_tab) {
+      display: block;
+    }
   }
 }
 
 .main {
   margin-top: 134px;
+  @media (max-width: $r_800) {
+    margin-top: 85px;
+  }
+  @media (max-width: $r_mob_500) {
+    margin-top: 94px;
+  }
   &__info {
     margin-bottom: 90px;
   }
@@ -160,8 +210,32 @@ header {
       height: 264px;
     }
     @media (max-width: $r_desk) {
-      max-width: 1041px;
-      height: 201px;
+      max-width: 753px;
+      height: 200px;
+    }
+    @media (max-width: $r_800) {
+      max-width: 600px;
+      height: 174px;
+    }
+    @media (max-width: $r_tab) {
+      max-width: 545px;
+      height: 167px;
+    }
+    @media (max-width: $r_mob_600) {
+      max-width: 456px;
+      height: 132px;
+    }
+    @media (max-width: $r_mob_500) {
+      max-width: 349px;
+      height: 105px;
+    }
+    @media (max-width: $r_mob_400) {
+      max-width: 270px;
+      height: 83px;
+    }
+    @media (max-width: $r_minmob) {
+      max-width: 250px;
+      height: 73px;
     }
   }
   &__photo {
@@ -946,11 +1020,13 @@ header {
   &__btn {
     font-size: 1.6rem;
     text-align: center;
-    padding: 23px 237px;
-    background-color: $red;
-    color: $font-color;
+    padding: 23px 172px;
+    background-color: #D40000;
+    color: #F3F2F0;
     cursor: pointer;
     border: 1px solid #D40000;
+    width: 100%;
+    display: inline-block;
   }
 }
 
@@ -968,11 +1044,13 @@ header {
         opacity:1;
         max-height: 400px;
       }
-      ~.control{
+      ~.control {
         z-index:99;
-        &:after{transform: rotate(180deg);}
+        &:after  {
+          transform: rotate(180deg);
+        }
       }
-      ~.overlay-close{
+      ~.overlay-close {
         transform: none;
         pointer-events:initial;
       }
@@ -1000,6 +1078,15 @@ header {
       background-position: center;
       background-size: contain;
       transition: transform .3s ease;
+      @media (max-width: $r_desk_hd) {
+        margin-left: 43rem;
+      }
+      @media (max-width: $r_desk_1100) {
+        margin-left: 32rem;
+      }
+      @media (max-width: $r_desk) {
+        margin-left: 24.3rem;
+      }
     }
   }
 
