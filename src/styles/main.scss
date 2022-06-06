@@ -206,6 +206,9 @@ header {
     @media (max-width: $r_desk) {
       margin-bottom: 45px;
     }
+    @media (max-width: $r_desk) {
+      margin-bottom: 10px;
+    }
   }
   &__bg {
     margin-bottom: 12.2rem;
@@ -460,6 +463,9 @@ header {
       text-transform: uppercase;
       margin-top: 3.2rem;
       letter-spacing: 0.07rem;
+      @media (max-width:$r_tab_900) {
+        font-size: 2rem;
+      }
     }
     &__description {
       @include text(2.8rem, 4.2rem, $weight:400);
@@ -597,6 +603,9 @@ header {
 .portfolio {
   margin-bottom: 100px;
   position: relative;
+  @media (max-width: $r_desk) {
+    margin-bottom: 50px;
+  }
   &::before {
     content: "";
     width: 100%;
@@ -700,6 +709,10 @@ header {
     line-height: 4.2rem;
     margin-top: 178px;
     margin-bottom: 78px;
+    @media (max-width: $r_desk) {
+      margin-top: 70px;
+      margin-bottom: 70px;
+    }
   }
   &-grid {
     display: grid;
@@ -917,6 +930,9 @@ header {
       top: -54px;
       right: 59px;
       z-index: -1;
+    }
+    @media (max-width:$r_tab_900) {
+      font-size: 2rem;
     }
   }
     &_desc {
