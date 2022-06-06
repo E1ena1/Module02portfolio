@@ -203,7 +203,7 @@ header {
   }
   &__info {
     margin-bottom: 90px;
-    @media (max-width: $r_desk_1100) {
+    @media (max-width: $r_desk_1350) {
       margin-bottom: 0;
     }
 
@@ -456,6 +456,9 @@ header {
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     margin-bottom: 3rem;
+    @media (max-width: $r_desk_1350) {
+      margin-bottom: 0;
+    }
     &__title {
       @include text(2.8rem, $weight:700);
       text-transform: uppercase;
@@ -483,14 +486,18 @@ header {
   &__bottom {
     padding-bottom: 16.4rem;
     padding-top: 4.4rem;
-    @media (max-width: $r_desk) {
-      padding-bottom: 6.4rem;
+    @media (max-width: $r_desk_1350) {
+      padding-bottom: 1.4rem;
+      padding-top: 1.4rem;
     }
     &-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-      gap: 31px 50px;
+    gap: 31px 50px;
+    @media (max-width: $r_desk_1350) {
+        gap: 0 40px;
+    }
     &__item-1 {
       grid-column: 3/4;
       grid-row: 1/2;
@@ -950,6 +957,9 @@ header {
     margin-top: 36px;
     margin-bottom: 16px;
     gap: 1.6rem;
+    @media (max-width: $r_desk_1500) {
+      margin: 0;
+    }
     &__item-1 {
       grid-column: 1/3;
     }
@@ -1010,6 +1020,9 @@ header {
 
 .contact {
   margin-top: 113px;
+  @media (max-width: $r_desk_1500) {
+    margin-top: 50px;
+  }
   &-wrapper {
     margin-bottom: 128px;
   }
@@ -1019,6 +1032,9 @@ header {
     margin-top: 60px;
     margin-bottom: 50px;
     gap: 2rem;
+    @media (max-width: $r_desk_1500) {
+      margin-top: 50px;
+    }
     &__item-1 {
       grid-column: 1/3;
       &_bottom {
@@ -1090,6 +1106,20 @@ header {
         position: absolute;
         top: 26px;
         left: -176px;
+        @media (max-width: $r_desk_1600) {
+          top: -3px;
+          left: -158px;
+        }
+        @media (max-width: $r_desk_1500) {
+          top: -21px;
+          left: -107px;
+        }
+        @media (max-width: $r_desk_1400) {
+
+        }
+        @media (max-width: $r_desk_1280) {
+          background-size: 51px 45px;
+        }
       }
       &::after {
         content: '';
@@ -1102,6 +1132,20 @@ header {
         top: -28px;
         left: -151px;
         z-index: -1;
+        @media (max-width: $r_desk_1500) {
+          width: 220px;
+          height: 220px;
+          left: -92px;
+        }
+        @media (max-width: $r_desk_1400) {
+          width: 210px;
+          height: 210px;
+        }
+        @media (max-width: $r_desk_1280) {
+          width: 150px;
+          height: 150px;
+        }
+
       }
     }
     &__description {
