@@ -203,12 +203,10 @@ header {
   }
   &__info {
     margin-bottom: 90px;
-    @media (max-width: $r_desk) {
-      margin-bottom: 45px;
+    @media (max-width: $r_desk_1100) {
+      margin-bottom: 0;
     }
-    @media (max-width: $r_desk) {
-      margin-bottom: 10px;
-    }
+
   }
   &__bg {
     margin-bottom: 12.2rem;
@@ -470,6 +468,10 @@ header {
     &__description {
       @include text(2.8rem, 4.2rem, $weight:400);
       max-width: 560px;
+      @media (max-width:$r_desk) {
+        font-size: 1.8rem;
+        line-height: 3.2rem;
+      }
     }
     &__item-1 {
       grid-column: 1/2;
