@@ -37,7 +37,6 @@ html {
 }
 
 body {
-  //background: linear-gradient(to bottom, $main-color 37%, $main-color-dark 37%);
   background-color: $main-color;
   font-family: 'Inter', sans-serif;
   color: $font-color;
@@ -113,6 +112,7 @@ header {
     &_tel {
       list-style-type: none;
       position: relative;
+      animation: red-shadow 10s infinite;
       &::after {
         content: '';
         height: 2.4rem;
@@ -1100,6 +1100,7 @@ header {
       font-weight: 700;
       line-height: 6.3rem;
       position: relative;
+      animation: shadow 10s infinite;
       @media (max-width: $r_desk_1280) {
         font-size: 3.2rem;
       }
@@ -1463,5 +1464,50 @@ header {
       color: rgba($font-color, 1);
       border-bottom: 1px solid rgba($font-color, 1);
     }
+  }
+}
+
+@keyframes shadow {
+  0% {
+    text-shadow: #232326 1px 1px 1px;
+  }
+  40% {
+    text-shadow: 2px 4px 5px rgba(35, 35, 38, 20);
+  }
+  50% {
+    text-shadow: 5px 4px 5px rgba(35, 35, 38, 20);
+  }
+  100% {
+    text-shadow: #232326 1px 1px 1px;
+  }
+}
+
+@keyframes red-shadow {
+  0% {
+    text-shadow: #232326 1px 1px 1px;
+  }
+  30% {
+    text-shadow: 1px 2px 3px rgba(212, 0, 0, 10);
+  }
+  40%  {
+    text-shadow: 2px 3px 3px rgba(212, 0, 0, 20);
+  }
+  50% {
+    text-shadow: 2px 3px 4px  rgba(212, 0, 0, 30);
+  }
+  60% {
+    text-shadow: 3px 4px 6px  rgba(212, 0, 0, 40);
+  }
+  70% {
+    text-shadow: 2px 3px 4px  rgba(212, 0, 0, 30);
+  }
+  80% {
+    text-shadow: 2px 3px 3px rgba(212, 0, 0, 20);
+  }
+  90% {
+    text-shadow: 1px 2px 3px rgba(212, 0, 0, 10);
+  }
+  100% {
+    text-shadow: #232326 1px 1px 1px;
   }
 }
