@@ -627,6 +627,7 @@ header {
   cursor: pointer;
   transition-timing-function: ease-out;
   position: relative;
+  animation: red-shadow 10s 10;
   &::after {
     content: "";
     width: 1px;
@@ -1423,7 +1424,7 @@ header {
     }
   }
 
-  .overlay-close{
+  .overlay-close {
     position: fixed;
     top:0;
     left:0;
@@ -1496,7 +1497,7 @@ header {
     text-shadow: 2px 3px 4px  rgba(212, 0, 0, 30);
   }
   60% {
-    text-shadow: 3px 4px 6px  rgba(212, 0, 0, 40);
+    text-shadow: 3px 3px 5px  rgba(212, 0, 0, 40);
   }
   70% {
     text-shadow: 2px 3px 4px  rgba(212, 0, 0, 30);
@@ -1511,3 +1512,4 @@ header {
     text-shadow: #232326 1px 1px 1px;
   }
 }
+
