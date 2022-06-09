@@ -452,29 +452,35 @@
         </div>
     </div>
 </footer>
+
+
 <div class="modal">
     <div class="modal__container">
-        <h3>Расскажите о своем проекте</h3>
-        <p>Заполните все поля, и я свяжусь с вами в ближайшее время</p>
-        <form>
-            <label class="card__label">Телефон или почта</label>
-            <input class="card__input" placeholder="Введите телефон">
-            <label class="card__label">Выберите удобный способ связи</label>
-            <label class="drop">
-                <input type="checkbox" id="modal__target-drop">
-                <span class="control">Telegram</span>
-                <!-- Items -->
-                <ul class="drop-items">
-                    <li class="item-drop"><a target="_blank" href="#">WhatsApp</a></li>
-                    <li class="item-drop"><a target="_blank" href="#">Viber</a></li>
-                    <li class="item-drop"><a href="#">Звонок на телефон</a></li>
-                    <li class="item-drop"><a href="#">SMS сообщение</a></li>
-                </ul>
-                <!-- Alternative to close dropdown with click out -->
-                <label for="modal__target-drop" class="overlay-close"></label>
-            </label>
-            <button class="card__btn" type="submit">Отправить</button>
-        </form>
+        <div class="modal__box">
+            <h3 class="modal__title">Расскажите о&nbsp;своем проекте</h3>
+            <p class="modal__desc">Заполните все поля, и я свяжусь с вами в ближайшее время</p>
+            <button type="button" class="modal__close"></button>
+            <hr class="line">
+            <form class="modal__form">
+                <label class="modal__label">Телефон или почта</label>
+                <input class="card__input" placeholder="Введите телефон">
+                <label class="modal__label">Выберите удобный способ связи</label>
+                <label class="drop modal__drop">
+                    <input type="checkbox" id="modal__target-drop">
+                    <span class="control">Telegram</span>
+                    <!-- Items -->
+                    <ul class="drop-items">
+                        <li class="item-drop"><a target="_blank" href="#">WhatsApp</a></li>
+                        <li class="item-drop"><a target="_blank" href="#">Viber</a></li>
+                        <li class="item-drop"><a href="#">Звонок на телефон</a></li>
+                        <li class="item-drop"><a href="#">SMS сообщение</a></li>
+                    </ul>
+                    <!-- Alternative to close dropdown with click out -->
+                    <label for="modal__target-drop" class="overlay-close"></label>
+                </label>
+                <button class="card__btn" type="submit">Отправить</button>
+            </form>
+        </div>
     </div>
 </div>
 </body>

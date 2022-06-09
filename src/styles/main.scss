@@ -11,6 +11,7 @@ $r_mob_360: 360px;
 $r_mob_400: 400px;
 $r_mob_500: 500px;
 $r_mob_600: 600px;
+$r_mob_650: 650px;
 $r_tab: 768px;
 $r_800: 800px;
 $r_tab_900: 900px;
@@ -1298,6 +1299,9 @@ header {
   &__label {
     font-size: 1.2rem;
     line-height: 1.8rem;
+    @media (max-width: $r_mob_650) {
+      font-size: 1rem;
+    }
   }
   &__input {
     box-sizing: border-box;
@@ -1309,11 +1313,18 @@ header {
     padding: 32px 21px;
     margin-top: 1rem;
     margin-bottom: 2rem;
+    @media (max-width: $r_mob_650) {
+      padding: 28px 21px;
+      margin: 10px 0 15px 0;
+    }
     &::placeholder {
       font-size: 1.2rem;
       color: $font-color;
       line-height: 1.8rem;
       opacity: .2;
+      @media (max-width: $r_mob_650) {
+       font-size: 1rem;
+      }
     }
     &:focus {
       outline: none;
@@ -1329,6 +1340,10 @@ header {
     border: 1px solid #D40000;
     width: 100%;
     display: inline-block;
+    @media (max-width: $r_mob_650) {
+      font-size: 1.2rem;
+      padding: 20px 123px;
+    }
   }
 }
 
@@ -1338,7 +1353,6 @@ header {
   width: 100%;
   margin-top: 1rem;
   margin-bottom: 40px;
-
   input[type="checkbox"]{
     display:none;
     &:checked {
@@ -1368,6 +1382,10 @@ header {
     padding: 27px 10px 23px 18px;
     background-color: rgba($font-color, .1);
     transition: all .3s ease;
+    @media (max-width: $r_mob_650) {
+      font-size: 1rem;
+      padding: 20px 10px 23px 18px;
+    }
     &:after{
       content:"";
       display:inline-block;
@@ -1390,7 +1408,6 @@ header {
       }
     }
   }
-
   .drop-items {
     position: absolute;
     top: 96%;
@@ -1414,6 +1431,9 @@ header {
         text-decoration: none;
         padding: 0 10px 13px 21px;
         transition: all .3s ease;
+        @media (max-width: $r_mob_650) {
+          font-size: 1rem;
+        }
         &:hover {
           color: rgba($font-color, 1);
         }
@@ -1513,3 +1533,93 @@ header {
   }
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 500;
+  &__container {
+    background-color: $main-color;
+    max-width: 600px;
+    position: relative;
+    top: 15%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 5;
+    @media (max-width: $r_mob_650) {
+      max-width: 360px;
+    }
+  }
+  &__box {
+    padding: 30px 20px;
+    position: relative;
+    @media (max-width: $r_mob_650) {
+      padding: 10px 10px 57px 10px;
+    }
+  }
+  &__title {
+    @include text(2.2rem, 3.3rem, 700,);
+    letter-spacing: 0.07rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 26px 0 14px 0;
+    @media (max-width: $r_mob_650) {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      max-width: 168px;
+      margin: 50px auto 20px;
+    }
+  }
+  &__desc {
+    @include text(1.6rem, 2.4rem);
+    text-align: center;
+    max-width: 318px;
+    margin: 0 auto 28px;
+    @media (max-width: $r_mob_650) {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      max-width: 260px;
+      margin: 0 auto 38px;
+    }
+  }
+  &__close {
+    width: 20px;
+    height: 20px;
+    background-color: inherit;
+    background-image: url("../images/close.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    cursor: pointer;
+    @media (max-width: $r_mob_650) {
+      top: 10px;
+      right: 10px;
+    }
+  }
+  &__form {
+    margin-top: 40px;
+    @media (max-width: $r_mob_650) {
+      margin-top: 35px;
+    }
+
+  }
+  &__label {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    @media (max-width: $r_mob_650) {
+      font-size: 1rem;
+    }
+  }
+  &__drop {
+    @media (max-width: $r_mob_650) {
+      margin-bottom: 26px;
+    }
+  }
+}
