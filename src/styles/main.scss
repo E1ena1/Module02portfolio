@@ -1541,6 +1541,11 @@ header {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 500;
+  &__btn {
+    @media (max-width: $r_mob_360) {
+      padding: 20px 80px;
+    }
+  }
   &__container {
     background-color: $main-color;
     max-width: 600px;
@@ -1553,6 +1558,9 @@ header {
     @media (max-width: $r_mob_650) {
       max-width: 360px;
     }
+    @media (max-width: $r_mob_360) {
+      max-width: 280px;
+    }
   }
   &__box {
     padding: 30px 20px;
@@ -1560,6 +1568,8 @@ header {
     @media (max-width: $r_mob_650) {
       padding: 10px 10px 57px 10px;
     }
+
+
   }
   &__title {
     @include text(2.2rem, 3.3rem, 700,);
@@ -1620,6 +1630,44 @@ header {
   &__drop {
     @media (max-width: $r_mob_650) {
       margin-bottom: 26px;
+    }
+  }
+  &__control{
+    font-size: 1.2rem;
+    position:relative;
+    color: $font-color;
+    display:block;
+    cursor: pointer;
+    padding: 27px 10px 23px 18px;
+    background-color: rgba($font-color, .1);
+    transition: all .3s ease;
+    @media (max-width: $r_mob_650) {
+      font-size: 1rem;
+      padding: 20px 10px 23px 18px;
+    }
+    &:after{
+      content:"";
+      display:inline-block;
+      height: 1.2rem;
+      width: 1.2rem;
+      margin-left: 45.3rem;
+      background-image: url("../images/input-arrow.svg");
+      background-repeat:no-repeat;
+      background-position: center;
+      background-size: contain;
+      transition: transform .3s ease;
+      @media (max-width: $r_desk_hd) {
+        margin-left: 40rem;
+      }
+      @media (max-width: $r_desk_1100) {
+        margin-left: 32rem;
+      }
+      @media (max-width: $r_desk) {
+        margin-left: 24.3rem;
+      }
+      @media (max-width: $r_mob_360) {
+        margin-left: 16.3rem;
+      }
     }
   }
 }
