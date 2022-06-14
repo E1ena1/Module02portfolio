@@ -113,7 +113,7 @@ header {
     &_tel {
       list-style-type: none;
       position: relative;
-      animation: red-shadow 10s infinite;
+      //animation: red-shadow 10s infinite;
       &::after {
         content: '';
         height: 2.4rem;
@@ -781,6 +781,8 @@ header {
   }
 }
 
+
+
 .more {
   margin-bottom: 153px;
   @media (max-width:$r_desk_1400) {
@@ -938,9 +940,9 @@ header {
       margin: 0 auto;
       filter: grayscale(1);
       transition: .3s;
-      &:hover {
-        filter: grayscale(0);
-      }
+      //&:hover {
+      //  filter: grayscale(0);
+      //}
       &:hover .more-technology__tooltip {
         visibility: visible;
         transition: .3s;
@@ -949,11 +951,6 @@ header {
       &_html {
         background-image: url("../images/html5.svg");
         background-size: 77px 84px;
-        //&:hover .more-technology__tooltip {
-        //  visibility: visible;
-        //  transition: .3s;
-        //  bottom: -100px;
-        //}
       }
       &_css {
         background-image: url("../images/css-logo.svg");
@@ -1009,6 +1006,9 @@ header {
       }
     }
   }
+}
+.more-technology-grid__item:hover .more-technology__link {
+  filter: grayscale(0);
 }
 
 .price {
@@ -1541,6 +1541,7 @@ header {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 500;
+  visibility: hidden;
   &__btn {
     @media (max-width: $r_mob_360) {
       padding: 20px 80px;
