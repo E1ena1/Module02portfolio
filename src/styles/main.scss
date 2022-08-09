@@ -628,7 +628,7 @@ header {
   cursor: pointer;
   transition-timing-function: ease-out;
   position: relative;
-  animation: red-shadow 10s 10;
+  //animation: red-shadow 10s 10;
   &::after {
     content: "";
     width: 1px;
@@ -781,8 +781,6 @@ header {
   }
 }
 
-
-
 .more {
   margin-bottom: 153px;
   @media (max-width:$r_desk_1400) {
@@ -922,11 +920,21 @@ header {
       line-height: 1.5rem;
       text-align: center;
       padding:  3.3rem 0;
-      background-image: url("../images/rectangle.svg");
+      //background-image: url("../images/rectangle.svg");
+      background-color: $red;
       background-repeat: no-repeat;
       z-index: 1;
       visibility: hidden;
       transition: .3s;
+      &::before {
+        content: "";
+        border: 10px solid transparent;
+        border-bottom: 10px solid $red;
+        position: absolute;
+        top:-12%;
+        left: 50%;
+        transform: translate(-50%);
+      }
       @media (max-width: $r_desk_1100) {
         left: 0;
       }
@@ -1001,7 +1009,7 @@ header {
         &:hover .more-technology__tooltip {
           visibility: visible;
            transition: .3s ease 0s;
-           bottom: -100px;
+           bottom: -120px;
         }
       }
     }
@@ -1102,7 +1110,7 @@ header {
       font-weight: 700;
       line-height: 6.3rem;
       position: relative;
-      animation: shadow 10s infinite;
+      //animation: shadow 10s infinite;
       @media (max-width: $r_desk_1280) {
         font-size: 3.2rem;
       }
@@ -1155,16 +1163,39 @@ header {
     @media (max-width: $r_desk_1280) {
       margin-top: 30px;
     }
+    @media (max-width: $r_tab) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 130px 130px 10px 30px;
+    }
     &__item-1 {
       grid-column: 1/3;
+      @media (max-width: $r_tab) {
+        &-top {
+          grid-row: 1/2;
+        }
+      }
       &_bottom {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        @media (max-width: $r_tab) {
+          grid-column: 1/3;
+          grid-row: 4/5;
+          flex-direction: row;
+          justify-content: center;
+        }
       }
+
     }
     &__item-2 {
       grid-column: 3/5;
+      @media (max-width: $r_tab) {
+        &-top {
+          grid-row: 2/3;
+        }
+        grid-column: 1/3;
+        grid-row: 1/2;
+      }
     }
     &__link {
       &-vk {
@@ -1391,21 +1422,15 @@ header {
       display:inline-block;
       height: 1.2rem;
       width: 1.2rem;
-      margin-left: 45.3rem;
+      //margin-left: 45.3rem;
+      position: absolute;
+      top: 29px;
+      right: 24px;
       background-image: url("../images/input-arrow.svg");
       background-repeat:no-repeat;
       background-position: center;
       background-size: contain;
       transition: transform .3s ease;
-      @media (max-width: $r_desk_hd) {
-        margin-left: 40rem;
-      }
-      @media (max-width: $r_desk_1100) {
-        margin-left: 32rem;
-      }
-      @media (max-width: $r_desk) {
-        margin-left: 24.3rem;
-      }
     }
   }
   .drop-items {
