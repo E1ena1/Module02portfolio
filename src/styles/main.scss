@@ -175,20 +175,67 @@ header {
     }
   }
   &__burger-btn {
-    width: 26px;
-    height: 20px;
-    background-image: url("../images/burger.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
+    --color: white;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    margin: 5px 0 0 0;
+    outline: none;
+    position: relative;
     border: none;
+    background: none;
     cursor: pointer;
-    background-color: inherit;
-    align-self: center;
     display: none;
+    -webkit-appearence: none;
+    -webkit-tap-highlight-color: transparent;
     @media (max-width: $r_tab) {
       display: block;
     }
   }
+  &__burger-btn svg {
+      width: 64px;
+      height: 48px;
+      top: -6px;
+      left: -14px;
+      stroke: var(--color);
+      stroke-width: 2px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      display: block;
+      position: absolute;
+    }
+  &__burger-btn svg path {
+      transition: stroke-dasharray var(--duration, .85s) var(--easing, ease) var(--delay, 0s), stroke-dashoffset var(--duration, .85s) var(--easing, ease) var(--delay, 0s);
+      stroke-dasharray: var(--array-1, 26px) var(--array-2, 100px);
+      stroke-dashoffset: var(--offset, 126px);
+      transform: translateZ(0);
+    }
+  &__burger-btn svg path:nth-child(2) {
+      --duration: .7s;
+      --easing: ease-in;
+      --offset: 100px;
+      --array-2: 74px;
+    }
+  &__burger-btn svg path:nth-child(3) {
+      --offset: 133px;
+      --array-2: 107px;
+    }
+  &__burger-btn.header__burger-btn_active svg path {
+      --offset: 57px;
+    }
+  &__burger-btn.header__burger-btn_active svg path:nth-child(1), .header__burger-btn.header__burger-btn_active svg path:nth-child(3) {
+      --delay: .15s;
+      --easing: cubic-bezier(.2, .4, .2, 1.1);
+    }
+  &__burger-btn.header__burger-btn_active svg path:nth-child(2) {
+      --duration: .4s;
+      --offset: 2px;
+      --array-1: 1px;
+    }
+  &__burger-btn.header__burger-btn_active svg path:nth-child(3) {
+      --offset: 58px;
+    }
 }
 
 .main {
@@ -460,6 +507,9 @@ header {
   padding-bottom: 142px;
   @media (max-width: $r_desk_1400) {
     padding-bottom: 80px;
+  }
+  @media (max-width: $r_desk) {
+    padding-top: 55px;
   }
   &-grid {
     display: grid;
@@ -937,6 +987,9 @@ header {
       }
       @media (max-width: $r_desk_1100) {
         left: 0;
+      }
+      @media (max-width: $r_800) {
+        display: none;
       }
     }
     &__link {

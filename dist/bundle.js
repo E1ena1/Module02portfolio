@@ -1,0 +1,1 @@
+(()=>{"use strict";document.querySelectorAll(".header__burger-btn").forEach((e=>{e.addEventListener("click",(r=>{e.classList.toggle("header__burger-btn_active")}))}))})();
