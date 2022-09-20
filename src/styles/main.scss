@@ -29,7 +29,6 @@ html {
   font-size: 10px;
 }
 
-
 @mixin text ($size: null, $line-height: null, $weight: null, $color: null) {
   font-size: $size;
   line-height: $line-height;
@@ -332,7 +331,6 @@ header {
         @media (max-width: $r_desk_1280) {
           width: 150px;
           height: 150px;
-          top: 0;
           left: -44px;
         }
       }
@@ -358,6 +356,11 @@ header {
           top: 120px;
           left: -11px;
           background-size: 51px 45px;
+        }
+        @media (max-width: $r_800) {
+          top: 100px;
+          left: -11px;
+          background-size: 51px 34px;
         }
       }
     }
@@ -689,7 +692,7 @@ header {
     position: absolute;
     bottom: -10px;
     left: 0;
-    transition: .3s;
+    transition: .5s;
   }
   &:hover::after {
     opacity: 1;
@@ -708,6 +711,9 @@ header {
   }
   @media (max-width: $r_desk) {
     font-size: 5rem;
+  }
+  @media (max-width: $r_800) {
+    font-size: 2.8rem;
   }
 }
 
@@ -975,7 +981,7 @@ header {
       background-repeat: no-repeat;
       z-index: 1;
       visibility: hidden;
-      transition: .3s;
+      transition: .5s;
       &::before {
         content: "";
         border: 10px solid transparent;
@@ -1475,7 +1481,6 @@ header {
       display:inline-block;
       height: 1.2rem;
       width: 1.2rem;
-      //margin-left: 45.3rem;
       position: absolute;
       top: 29px;
       right: 24px;
@@ -1500,7 +1505,7 @@ header {
     opacity:0;
     z-index:99;
     .item-drop {
-      list-style:none;
+      //list-style:none;
       background-color: rgba($font-color, .1);
       a {
         font-size: 1.2rem;
@@ -1533,7 +1538,90 @@ header {
     pointer-events:none;
   }
 }
+.drop-items-select {
+  height: 65px;
+  width: 100%;
+  outline: 0;
+  color: $font-color;
+  background-color: rgba($font-color, .1);
+  cursor: pointer;
+  border:none;
+}
+.select {
+  width: 100%;
+  position: relative;
+  background-color: rgba(243, 242, 240, 0.1);
+  margin-bottom: 25px;
+  &.open {
+    .select__dropdown {
+      display: block;
+      background-color: #232326;
+    }
+    .select__input {
+      border-bottom: none;
+      //background-color: rgba(243, 242, 240, 0.1);
+      background-color: rgba(243, 242, 240, 0.1);
+    }
+  }
+  &__input {
+    //border: 1px solid #ccc;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    cursor: pointer;
+  }
+  &__dropdown {
+    display: none;
+    position: absolute;
+    top: 46px;
+    left: 0;
+    right: 0;
+    background-color: $main-color-dark;
+    //border: 1px solid #ccc;
+    align-items: center;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    //background-color: $main-color-dark;
+    background-color: rgba(243, 242, 240, 0.1);
+  }
+  &__item {
+    padding: 1rem;
+    //border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    transition: .3s ease-in;
+    background-color: rgba(#232326, 0.1);
+    //background-color: $main-color;
+    &.selected {
+      background-color: #23232F;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+    &:hover {
+     color: red;
+    }
+  }
+  /* &__backdrop {
+       position: fixed;
+       top: 0;
+       right: 0;
+       left: 0;
+       bottom: 0;
+       background: rgba($color: #00cccc, $alpha: 0.5);
+   }*/
+}
 
+.item-drop-option {
+  background: rgba($font-color, .1);
+  padding-top: 10px;
+}
 .footer {
   padding-bottom: 4.2rem;
   &__top-item {
@@ -1647,8 +1735,6 @@ header {
     @media (max-width: $r_mob_650) {
       padding: 10px 10px 57px 10px;
     }
-
-
   }
   &__title {
     @include text(2.2rem, 3.3rem, 700,);

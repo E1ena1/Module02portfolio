@@ -12,6 +12,7 @@
     <link rel="mask-icon" href="./images/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -396,19 +397,27 @@
                                 <label class="card__label">Телефон или почта</label>
                                 <input class="card__input" placeholder="Введите телефон">
                                 <label class="card__label">Выберите удобный способ связи</label>
-                                <label class="drop">
-                                    <input type="checkbox" id="target-drop-example">
-                                    <span class="control">Telegram</span>
-                                    <!-- Items -->
-                                    <ul class="drop-items">
-                                        <li class="item-drop"><a target="_blank" href="#">WhatsApp</a></li>
-                                        <li class="item-drop"><a target="_blank" href="#">Viber</a></li>
-                                        <li class="item-drop"><a href="#">Звонок на телефон</a></li>
-                                        <li class="item-drop"><a href="#">SMS сообщение</a></li>
-                                    </ul>
-                                    <!-- Alternative to close dropdown with click out -->
-                                    <label for="target-drop-example" class="overlay-close"></label>
-                                </label>
+<!--                                <label class="drop">-->
+<!--                                    <input type="checkbox" id="target-drop-example">-->
+<!--&lt;!&ndash;                                    <span class="control">Telegram</span>&ndash;&gt;-->
+<!--                                    &lt;!&ndash; Items &ndash;&gt;-->
+<!--&lt;!&ndash;                                    <div class="drop-items">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <div class="item-drop"><a target="_blank" href="#">WhatsApp</a></div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <div class="item-drop"><a target="_blank" href="#">Viber</a></div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <div class="item-drop"><a href="#">Звонок на телефон</a></div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <div class="item-drop"><a href="#">SMS сообщение</a></div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+<!--                                    <select name="refer" id="refer" class="drop-items-select">-->
+<!--                                        <option value="null" class="control item-drop-option">Telegram</option>-->
+<!--                                        <option value="1" class="item-drop-option">WhatsApp</option>-->
+<!--                                        <option value="2" class="item-drop-option">Viber</option>-->
+<!--                                        <option value="3" class="item-drop-option">Звонок на телефон</option>-->
+<!--                                        <option value="4" class="item-drop-option">SMS сообщение</option>-->
+<!--                                    </select>-->
+<!--                                    &lt;!&ndash; Alternative to close dropdown with click out &ndash;&gt;-->
+<!--                                    <label for="target-drop-example" class="overlay-close"></label>-->
+<!--                                </label>-->
+                                <div id="select"></div>
                                 <button class="card__btn" type="submit">Отправить</button>
                             </form>
                         </div>
@@ -454,7 +463,7 @@
         </div>
         <div class="footer__bottom">
             <p class="footer__bottom-item">© 2020, Все права защищены</p>
-            <p class="footer__bottom-item">Сделано в рамках курса учебной платформы <a class="footer__author" href="https://www.youtube.com/c/%D0%90%D0%BD%D0%BD%D0%B0%D0%91%D0%BB%D0%BE%D0%BA">Annblok</a></p>
+            <p class="footer__bottom-item">Сделано в рамках курса учебной платформы <a class="footer__author" href="https://frontendblok.com/" target="_blank" >Annblok</a></p>
         </div>
     </div>
 </footer>
@@ -475,8 +484,8 @@
                     <span class="modal__control">Telegram</span>
                     <!-- Items -->
                     <ul class="drop-items">
-                        <li class="item-drop"><a target="_blank" href="#">WhatsApp</a></li>
-                        <li class="item-drop"><a target="_blank" href="#">Viber</a></li>
+                        <li class="item-drop"><a href="#">WhatsApp</a></li>
+                        <li class="item-drop"><a href="#">Viber</a></li>
                         <li class="item-drop"><a href="#">Звонок на телефон</a></li>
                         <li class="item-drop"><a href="#">SMS сообщение</a></li>
                     </ul>
