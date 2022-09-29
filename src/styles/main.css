@@ -1778,22 +1778,21 @@ header {
 .select__list {
   list-style-type: none;
   padding: 0;
+  margin-top: 0;
   background-color: rgba(243, 242, 240, 0.1);
 }
 .select__item {
   padding: 1rem;
+  color: rgba(243, 242, 240, 0.4);
   cursor: pointer;
   transition: 0.3s ease-in;
-  background-color: rgba(35, 35, 38, 0.1);
-}
-.select__item.selected {
-  background-color: #23232F;
+  background-color: rgba(243, 242, 240, 0.1);
 }
 .select__item:last-child {
   border-bottom: none;
 }
 .select__item:hover {
-  color: red;
+  color: #F3F2F0;
 }
 
 .item-drop-option {

@@ -9,10 +9,10 @@ document.querySelectorAll('.header__burger-btn').forEach(btn => {
 });
 
 const select = new Select('#select', {
-    placeholder: 'Telegram',
-    // selectedId: '1',
+    placeholder: 'Плейсхолдер по умолчанию',
+    selectedId: '1',
     data: [
-        // {id: '1', value: 'Telegram'},
+        {id: '1', value: 'Telegram'},
         {id: '2', value: 'WatsApp'},
         {id: '3', value: 'Viber'},
         {id: '4', value: 'Звонок на телефон'},
