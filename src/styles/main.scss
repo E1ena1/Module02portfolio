@@ -1538,6 +1538,7 @@ header {
     pointer-events:none;
   }
 }
+
 .drop-items-select {
   height: 65px;
   width: 100%;
@@ -1547,11 +1548,13 @@ header {
   cursor: pointer;
   border:none;
 }
+
 .select {
   width: 100%;
   position: relative;
   background-color: rgba(243, 242, 240, 0.1);
   margin-bottom: 25px;
+  margin-top: 10px;
   &.open {
     .select__dropdown {
       display: block;
@@ -1559,18 +1562,17 @@ header {
     }
     .select__input {
       border-bottom: none;
-      //background-color: rgba(243, 242, 240, 0.1);
       background-color: rgba(243, 242, 240, 0.1);
     }
   }
   &__input {
-    //border: 1px solid #ccc;
-    height: 46px;
+    height: 65px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1rem;
+    padding: 0 1rem 0 2rem;
     cursor: pointer;
+    margin-bottom: 3.9rem;
   }
   &__dropdown {
     display: none;
@@ -1579,7 +1581,6 @@ header {
     left: 0;
     right: 0;
     background-color: $main-color-dark;
-    //border: 1px solid #ccc;
     align-items: center;
     padding: 0;
     max-height: 200px;
@@ -1589,20 +1590,14 @@ header {
     list-style-type: none;
     padding: 0;
     margin-top: 0;
-    //background-color: $main-color-dark;
     background-color: rgba(243, 242, 240, 0.1);
   }
   &__item {
-    padding: 1rem;
-    //border-bottom: 1px solid #ccc;
+    padding: 1rem 1rem 1rem 2rem;
     color: rgba($font-color, .4);
     cursor: pointer;
     transition: .3s ease-in;
-    //background-color: rgba(#232326, 0.1);
     background-color: rgba(243, 242, 240, 0.1);
-    &.selected {
-      //background-color: #23232F;
-    }
     &:last-child {
       border-bottom: none;
     }
@@ -1610,20 +1605,18 @@ header {
       color: $font-color;
     }
   }
-  /* &__backdrop {
-       position: fixed;
-       top: 0;
-       right: 0;
-       left: 0;
-       bottom: 0;
-       background: rgba($color: #00cccc, $alpha: 0.5);
-   }*/
+  &__arrow::before {
+    position: absolute;
+    top: 31px;
+    right: 25px;
+  }
 }
 
 .item-drop-option {
   background: rgba($font-color, .1);
   padding-top: 10px;
 }
+
 .footer {
   padding-bottom: 4.2rem;
   &__top-item {
@@ -1836,5 +1829,100 @@ header {
         margin-left: 16.3rem;
       }
     }
+  }
+}
+
+.modal-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 500;
+  overflow: scroll;
+  &__container {
+    background-color: $main-color;
+  }
+  &__items {
+    max-width: 340px;
+  }
+  &__list {
+    list-style-type: none;
+  }
+  &__list_link,
+  .modal-menu__list_social {
+    color: $font-color;
+    text-decoration: none;
+  }
+  &__list_phone {
+    color: $font-color;
+    text-decoration: none;
+  }
+  &__list_mail {
+    color: $font-color;
+    text-decoration: none;
+  }
+  &__close-btn {
+    --color: white;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    margin: 5px 0 0 0;
+    outline: none;
+    position: relative;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: none;
+    -webkit-appearence: none;
+    -webkit-tap-highlight-color: transparent;
+    @media (max-width: $r_tab) {
+      display: block;
+    }
+  }
+  &__close-btn svg {
+    width: 64px;
+    height: 48px;
+    top: -6px;
+    left: -14px;
+    stroke: var(--color);
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    display: block;
+    position: absolute;
+  }
+  &__close-btn svg path {
+    transition: stroke-dasharray var(--duration, .85s) var(--easing, ease) var(--delay, 0s), stroke-dashoffset var(--duration, .85s) var(--easing, ease) var(--delay, 0s);
+    stroke-dasharray: var(--array-1, 26px) var(--array-2, 100px);
+    stroke-dashoffset: var(--offset, 126px);
+    transform: translateZ(0);
+  }
+  &__close-btn svg path:nth-child(2) {
+    --duration: .7s;
+    --easing: ease-in;
+    --offset: 100px;
+    --array-2: 74px;
+  }
+  &__close-btn svg path:nth-child(3) {
+    --offset: 133px;
+    --array-2: 107px;
+  }
+  &__close-btn.modal-menu__close-btn_active svg path {
+    --offset: 57px;
+  }
+  &__close-btn.modal-menu__close-btn_active svg path:nth-child(1), .modal-menu__close-btn.modal-menu__close-btn_active svg path:nth-child(3) {
+    --delay: .15s;
+    --easing: cubic-bezier(.2, .4, .2, 1.1);
+  }
+  &__close-btn.modal-menu__close-btn_active svg path:nth-child(2) {
+    --duration: .4s;
+    --offset: 2px;
+    --array-1: 1px;
+  }
+  &__close-btn.modal-menu__close-btn_active svg path:nth-child(3) {
+    --offset: 58px;
   }
 }

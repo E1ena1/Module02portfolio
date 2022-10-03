@@ -1738,14 +1738,7 @@ header {
   position: relative;
   background-color: rgba(243, 242, 240, 0.1);
   margin-bottom: 25px;
-  /* &__backdrop {
-       position: fixed;
-       top: 0;
-       right: 0;
-       left: 0;
-       bottom: 0;
-       background: rgba($color: #00cccc, $alpha: 0.5);
-   }*/
+  margin-top: 10px;
 }
 .select.open .select__dropdown {
   display: block;
@@ -1756,12 +1749,13 @@ header {
   background-color: rgba(243, 242, 240, 0.1);
 }
 .select__input {
-  height: 46px;
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0 1rem 0 2rem;
   cursor: pointer;
+  margin-bottom: 3.9rem;
 }
 .select__dropdown {
   display: none;
@@ -1782,7 +1776,7 @@ header {
   background-color: rgba(243, 242, 240, 0.1);
 }
 .select__item {
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 2rem;
   color: rgba(243, 242, 240, 0.4);
   cursor: pointer;
   transition: 0.3s ease-in;
@@ -1793,6 +1787,11 @@ header {
 }
 .select__item:hover {
   color: #F3F2F0;
+}
+.select__arrow::before {
+  position: absolute;
+  top: 31px;
+  right: 25px;
 }
 
 .item-drop-option {
@@ -2039,6 +2038,103 @@ header {
   .modal__control:after {
     margin-left: 16.3rem;
   }
+}
+
+.modal-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 500;
+  overflow: scroll;
+}
+.modal-menu__container {
+  background-color: #232326;
+}
+.modal-menu__items {
+  max-width: 340px;
+}
+.modal-menu__list {
+  list-style-type: none;
+}
+.modal-menu__list_link,
+.modal-menu .modal-menu__list_social {
+  color: #F3F2F0;
+  text-decoration: none;
+}
+.modal-menu__list_phone {
+  color: #F3F2F0;
+  text-decoration: none;
+}
+.modal-menu__list_mail {
+  color: #F3F2F0;
+  text-decoration: none;
+}
+.modal-menu__close-btn {
+  --color: white;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  margin: 5px 0 0 0;
+  outline: none;
+  position: relative;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+  -webkit-appearence: none;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (max-width: 768px) {
+  .modal-menu__close-btn {
+    display: block;
+  }
+}
+.modal-menu__close-btn svg {
+  width: 64px;
+  height: 48px;
+  top: -6px;
+  left: -14px;
+  stroke: var(--color);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  display: block;
+  position: absolute;
+}
+.modal-menu__close-btn svg path {
+  transition: stroke-dasharray var(--duration, 0.85s) var(--easing, ease) var(--delay, 0s), stroke-dashoffset var(--duration, 0.85s) var(--easing, ease) var(--delay, 0s);
+  stroke-dasharray: var(--array-1, 26px) var(--array-2, 100px);
+  stroke-dashoffset: var(--offset, 126px);
+  transform: translateZ(0);
+}
+.modal-menu__close-btn svg path:nth-child(2) {
+  --duration: .7s;
+  --easing: ease-in;
+  --offset: 100px;
+  --array-2: 74px;
+}
+.modal-menu__close-btn svg path:nth-child(3) {
+  --offset: 133px;
+  --array-2: 107px;
+}
+.modal-menu__close-btn.modal-menu__close-btn_active svg path {
+  --offset: 57px;
+}
+.modal-menu__close-btn.modal-menu__close-btn_active svg path:nth-child(1), .modal-menu .modal-menu__close-btn.modal-menu__close-btn_active svg path:nth-child(3) {
+  --delay: .15s;
+  --easing: cubic-bezier(.2, .4, .2, 1.1);
+}
+.modal-menu__close-btn.modal-menu__close-btn_active svg path:nth-child(2) {
+  --duration: .4s;
+  --offset: 2px;
+  --array-1: 1px;
+}
+.modal-menu__close-btn.modal-menu__close-btn_active svg path:nth-child(3) {
+  --offset: 58px;
 }
 
 /*# sourceMappingURL=main.css.map */
