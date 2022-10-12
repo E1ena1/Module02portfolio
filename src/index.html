@@ -37,15 +37,15 @@
                     </li>
                 </ul>
             </nav>
-            <ul class="header__info">
+            <ul class="header__info" id="header__info">
                 <li class="header__item_tel">
-                    <a href="tel:89237777777"class="header__tel">8 923 777-77-77</a>
+                    <a href="tel:89237777777" class="header__tel">8 923 777-77-77</a>
                 </li>
                 <li class="header__item_mail">
                     <a href="mailto:alexdev@gmail.com" class="header__mail">alexdev@gmail.com</a>
                 </li>
             </ul>
-            <button class="header__burger-btn" type="button">
+            <button class="header__burger-btn" id="header__burger-btn"  type="button">
                 <svg viewBox="0 0 64 48">
                     <path d="M19,15 L45,15 C70,15 58,-2 49.0177126,7 L19,37"></path>
                     <path d="M19,24 L45,24 C61.2371586,24 57,49 41,33 L32,24"></path>
@@ -112,7 +112,7 @@
             </div>
         </div>
     </section>
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <div class="about__top">
                 <div class="about-grid">
@@ -129,11 +129,11 @@
                 <div class="about__bottom-grid">
                         <div class="about__bottom-grid__item-1">
                             <h2 class="about__bottom_title">Контроль</h2>
-                            <p class="about__bottom_desc">Предоставление результатов на&nbsp;каждом этапе работы с&nbsp;возможностью внести правки</p>
+                            <p class="about__bottom_desc">Предоставление&nbsp;результатов на&nbsp;каждом этапе работы с&nbsp;возможностью внести правки</p>
                         </div>
                         <div class="about__bottom-grid__item-2">
                             <h2 class="about__bottom_title">Ответственность</h2>
-                            <p class="about__bottom_desc">Фриланс&nbsp;как&nbsp;основная&nbsp;деятельность, что означает полную отдачу в&nbsp;процессе работы над заказом</p>
+                            <p class="about__bottom_desc">Фриланс&nbsp;как&nbsp;основная деятельность,&nbsp;что&nbsp;означает полную отдачу в&nbsp;процессе работы над заказом</p>
                         </div>
                         <div class="about__bottom-grid__item-3">
                             <h2 class="about__bottom_title">Исполнительность</h2>
@@ -141,7 +141,7 @@
                         </div>
                         <div class="about__bottom-grid__item-4">
                             <h2 class="about__bottom_title">Качество</h2>
-                            <p class="about__bottom_desc">Высокое качество как графических материалов, так и внутренних алгоритмов работы сайта</p>
+                            <p class="about__bottom_desc">Высокое качество как графических материалов, так&nbsp;и&nbsp;внутренних&nbsp;алгоритмов работы сайта</p>
                         </div>
                     </div>
             </div>
@@ -150,11 +150,11 @@
                 <div class="about__order-grid">
                     <div class="about__order-grid__item-1">
                         <h2 class="about__order_title">
-                            <span class="about__order_number">01</span>  Вы заказываете сайт
+                            <span class="about__order_number">01</span>  Вы заказываете&nbsp;сайт
                         </h2>
                     </div>
                     <div class="about__order-grid__item-2">
-                        <p class="about__order_desc">Связываетесь со мной по телефону или через заявку на сайте</p>
+                        <p class="about__order_desc">Связываетесь со мной по&nbsp;телефону или через заявку на сайте</p>
                     </div>
                 </div>
                 <hr class="line">
@@ -176,7 +176,7 @@
                         </h2>
                     </div>
                     <div class="about__order-grid__item-2">
-                        <p class="about__order_desc">Верстаю сайт по вашему проекту пиксель в пиксель</p>
+                        <p class="about__order_desc">Верстаю сайт по&nbsp;вашему&nbsp;проекту пиксель&nbsp;в&nbsp;пиксель</p>
                     </div>
                 </div>
                 <hr class="line">
@@ -248,7 +248,7 @@
                 <div class="more-grid__item more-grid__item-3">
                     <div class="more-grid__item-inner">
                         <h3 class="more-grid__title">Оптимальные сроки</h3>
-                        <p class="more-grid__desc">Создание&nbsp;сайта&nbsp;любой&nbsp;сложности в самые сжатые сроки</p>
+                        <p class="more-grid__desc">Создание&nbsp;сайта&nbsp;любой&nbsp;сложности в&nbsp;самые сжатые сроки</p>
                     </div>
                 </div>
                 <div class="more-grid__item more-grid__item-4">
@@ -315,7 +315,7 @@
             <hr class="line">
             <div class="price-grid">
                 <div class="price-grid__item-1">
-                    <h2 class="price-grid__title">Разработка <br>лэндинга или сайт визитки</h2>
+                    <h2 class="price-grid__title">Разработка <br>лэндинга или сайт&nbsp;визитки</h2>
                     <p class="price-grid__desc">Небольшой сайт состоящий из одной страницы</p>
                     <button class="btn" onclick="document.getElementById('Modal').style.visibility = 'visible'">Обсудить проект</button>
                 </div>
@@ -333,7 +333,7 @@
             <div class="price-grid">
                 <div class="price-grid__item-1">
                     <h2 class="price-grid__title">Разработка <br>корпоративного  сайта</h2>
-                    <p class="price-grid__desc">Небольшой сайт с n-количеством страниц</p>
+                    <p class="price-grid__desc">Небольшой сайт с&nbsp;n&nbsp;-&nbsp;количеством страниц</p>
                     <button class="btn" onclick="document.getElementById('Modal').style.visibility = 'visible'">Обсудить проект</button>
                 </div>
                 <div class="price-grid__item-2">
@@ -368,17 +368,18 @@
     <section class="contact">
         <div class="container">
             <div class="contact-wrapper">
-                <div class="contact-grid contact-grid-top">
-                    <div class="contact-grid__item-1 contact-grid__item-1-top">
+                <div class="contact-grid__top">
+                    <div class="contact-grid__top-item-1">
                         <h2 class="contact-grid__title">Расскажите <br>о своем проекте</h2>
                     </div>
-                    <div class="contact-grid__item-2 contact-grid__item-2-top">
-                        <p class="contact-grid__description">Воспользуйтесь формой обратной связи, чтобы обсудить ваш проект, заполните все поля, и я свяжусь с&nbsp;вами&nbsp;в ближайшее время</p>
+                    <div class=" contact-grid__top-item-2">
+                        <p class="contact-grid__description">Воспользуйтесь формой обратной связи, чтобы обсудить ваш проект, заполните все&nbsp;поля, и&nbsp;я&nbsp;свяжусь с&nbsp;вами&nbsp;в&nbsp;ближайшее&nbsp;время</p>
                     </div>
                 </div>
                 <hr class="line">
-                <div class="contact-grid">
-                    <div class="contact-grid__item-1 contact-grid__item-1_bottom">
+
+                <div class="contact-grid__bottom">
+                    <div class="contact-grid__bottom-item-1">
                         <ul class="contact-grid__social">
                             <li class="contact-grid__social-item">
                                 <a class="contact-grid__social-link contact-grid__link-vk" href="#">Vk</a>
@@ -391,32 +392,13 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="contact-grid__item-2">
+                    <div class="contact-grid__bottom-item-2">
                         <div class="card">
                             <form>
                                 <label class="card__label">Телефон или почта</label>
-                                <input class="card__input" placeholder="Введите телефон">
+                                <input class="card__input" type="tel" title="Например: 8 999 888-77-66" placeholder="Введите телефон">
                                 <label class="card__label">Выберите удобный способ связи</label>
-<!--                                <label class="drop">-->
-<!--                                    <input type="checkbox" id="target-drop-example">-->
-<!--&lt;!&ndash;                                    <span class="control">Telegram</span>&ndash;&gt;-->
-<!--                                    &lt;!&ndash; Items &ndash;&gt;-->
-<!--&lt;!&ndash;                                    <div class="drop-items">&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <div class="item-drop"><a target="_blank" href="#">WhatsApp</a></div>&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <div class="item-drop"><a target="_blank" href="#">Viber</a></div>&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <div class="item-drop"><a href="#">Звонок на телефон</a></div>&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <div class="item-drop"><a href="#">SMS сообщение</a></div>&ndash;&gt;-->
-<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
-<!--                                    <select name="refer" id="refer" class="drop-items-select">-->
-<!--                                        <option value="null" class="control item-drop-option">Telegram</option>-->
-<!--                                        <option value="1" class="item-drop-option">WhatsApp</option>-->
-<!--                                        <option value="2" class="item-drop-option">Viber</option>-->
-<!--                                        <option value="3" class="item-drop-option">Звонок на телефон</option>-->
-<!--                                        <option value="4" class="item-drop-option">SMS сообщение</option>-->
-<!--                                    </select>-->
-<!--                                    &lt;!&ndash; Alternative to close dropdown with click out &ndash;&gt;-->
-<!--                                    <label for="target-drop-example" class="overlay-close"></label>-->
-<!--                                </label>-->
+
                                 <div id="select"></div>
                                 <button class="card__btn" type="submit">Отправить</button>
                             </form>
@@ -424,39 +406,40 @@
                     </div>
                 </div>
             </div>
-            <hr class="line">
+
         </div>
     </section>
 </main>
 <footer class="footer">
     <div class="container">
+        <hr class="line">
         <div class="footer__top">
             <div class="footer__top-item">
-                <nav class="header__navigation">
-                    <ul class="header__nav">
-                        <li class="header__item">
-                            <a href="#" class="header__link">Обо мне</a>
+                <div class="footer__navigation">
+                    <ul class="footer__nav">
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Обо мне</a>
                         </li>
-                        <li class="header__item">
-                            <a href="#" class="header__link">Портфолио</a>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Портфолио</a>
                         </li>
-                        <li class="header__item">
-                            <a href="#" class="header__link">Этапы работ</a>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Этапы работ</a>
                         </li>
-                        <li class="header__item">
-                            <a href="#" class="header__link">Цены</a>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Цены</a>
                         </li>
-                        <li class="header__item">
-                            <a href="#" class="header__link"> Обратная связь</a>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link"> Обратная связь</a>
                         </li>
                     </ul>
-                </nav>
-                <ul class="header__info">
-                    <li class="header__item_tel">
-                        <a href="tel:89237777777"class="header__tel">8 923 777-77-77</a>
+                </div>
+                <ul class="footer__info">
+                    <li class="footer__item_tel">
+                        <a href="tel:89237777777" class="footer__tel">8 923 777-77-77</a>
                     </li>
-                    <li class="header__item_mail">
-                        <a href="mailto:alexdev@gmail.com" class="header__mail">alexdev@gmail.com</a>
+                    <li class="footer__item_mail">
+                        <a href="mailto:alexdev@gmail.com" class="footer__mail">alexdev@gmail.com</a>
                     </li>
                 </ul>
             </div>
@@ -476,21 +459,9 @@
             <hr class="line">
             <form class="modal__form">
                 <label class="modal__label">Телефон или почта</label>
-                <input class="card__input" placeholder="Введите телефон">
+                <input class="card__input" type="tel" title="Например: 8 999 888-77-66" placeholder="Введите телефон">
                 <label class="modal__label">Выберите удобный способ связи</label>
-                <label class="drop modal__drop">
-                    <input type="checkbox" id="modal__target-drop">
-                    <span class="modal__control">Telegram</span>
-                    <!-- Items -->
-                    <ul class="drop-items">
-                        <li class="item-drop"><a href="#">WhatsApp</a></li>
-                        <li class="item-drop"><a href="#">Viber</a></li>
-                        <li class="item-drop"><a href="#">Звонок на телефон</a></li>
-                        <li class="item-drop"><a href="#">SMS сообщение</a></li>
-                    </ul>
-                    <!-- Alternative to close dropdown with click out -->
-                    <label for="modal__target-drop" class="overlay-close"></label>
-                </label>
+                <div id="selectModal" class="select"></div>
                 <button class="card__btn modal__btn" type="submit">Отправить</button>
             </form>
         </div>
@@ -500,30 +471,34 @@
     <div class="modal-menu__container">
         <div class="modal-menu__items">
             <ul class="modal-menu__list">
-                <li><a class="modal-menu__list_link" href="#">Обо мне</a></li>
-                <li><a class="modal-menu__list_link" href="#">Портфолио</a></li>
-                <li><a class="modal-menu__list_link" href="#">Этапы работ</a></li>
-                <li><a class="modal-menu__list_link" href="#">Цены</a></li>
-                <li><a class="modal-menu__list_link" href="#">Обратная связь</a></li>
+                <li class="modal-menu__list-item">
+                    <a class="modal-menu__list_link" href="#about">Обо мне</a>
+                </li>
+                <li  class="modal-menu__list-item">
+                    <a class="modal-menu__list_link" href="#">Портфолио</a>
+                </li>
+                <li class="modal-menu__list-item">
+                    <a class="modal-menu__list_link" href="#">Этапы работ</a>
+                </li>
+                <li class="modal-menu__list-item">
+                    <a class="modal-menu__list_link" href="#">Цены</a>
+                </li>
+                <li class="modal-menu__list-item">
+                    <a class="modal-menu__list_link" href="#">Обратная связь</a>
+                </li>
             </ul>
-            <ul class="modal-menu__list">
+            <ul class="modal-menu__list modal-menu__list_contacts">
                 <li><a class="modal-menu__list_phone" href="tel:89237777777">8 923 777-77-77</a></li>
                 <li><a class="modal-menu__list_mail" href="mailto:alexdev@gmail.com">alexdev@gmail.com</a></li>
             </ul>
-            <ul class="modal-menu__list">
+            <ul class="modal-menu__list modal-menu__list_socials">
                 <li><a class="modal-menu__list_social modal-menu__list_social-vk" href="#">Vk</a></li>
                 <li><a class="modal-menu__list_social modal-menu__list_social-inst" href="#">Instagram</a></li>
                 <li><a class="modal-menu__list_social modal-menu__list_social-linkedin" href="#">Linkedin</a></li>
             </ul>
-            <button class="modal-menu__close-btn" onclick="closeModalMenu()" type="button">
-                <svg viewBox="0 0 64 48">
-                    <path d="M19,15 L45,15 C70,15 58,-2 49.0177126,7 L19,37"></path>
-                    <path d="M19,24 L45,24 C61.2371586,24 57,49 41,33 L32,24"></path>
-                    <path d="M45,33 L19,33 C-8,33 6,-2 22,14 L45,37"></path>
-                </svg>
-            </button>
         </div>
     </div>
 </div>
+
 </body>
 </html>

@@ -56,13 +56,21 @@ body {
   @media (max-width: $r_tab)  {
     max-width: 600px;
   }
-  @media (max-width: $r_mob_500)  {
+  @media (max-width: $r_mob_500) {
     max-width: 357px;
+  }
+  @media (max-width: $r_mob_400) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  @media (max-width: $r_mob_360) {
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
 
 header {
-  position: fixed;
+  position: sticky;
   width: 100%;
   top: 0;
   background-color: $main-color;
@@ -70,6 +78,8 @@ header {
 }
 
 .header {
+  --duration: .85s;
+  --array-2: 100px;
   display: flex;
   justify-content: space-between;
   padding-top: 4rem;
@@ -80,7 +90,6 @@ header {
     padding-bottom: 0.3rem;
   }
   @media (max-width: $r_mob_500) {
-    justify-content: flex-start;
     gap: 19.1rem;
     padding-top: 8px;
   }
@@ -89,6 +98,7 @@ header {
   }
   @media (max-width: $r_mob_360) {
     gap: 5vw;
+    justify-content: space-between;
   }
   &__navigation {
     flex-basis: 50%;
@@ -112,7 +122,6 @@ header {
     &_tel {
       list-style-type: none;
       position: relative;
-      //animation: red-shadow 10s infinite;
       &::after {
         content: '';
         height: 2.4rem;
@@ -185,6 +194,7 @@ header {
     background: none;
     cursor: pointer;
     display: none;
+    z-index: 600;
     -webkit-appearence: none;
     -webkit-tap-highlight-color: transparent;
     @media (max-width: $r_tab) {
@@ -205,8 +215,8 @@ header {
       position: absolute;
     }
   &__burger-btn svg path {
-      transition: stroke-dasharray var(--duration, .85s) var(--easing, ease) var(--delay, 0s), stroke-dashoffset var(--duration, .85s) var(--easing, ease) var(--delay, 0s);
-      stroke-dasharray: var(--array-1, 26px) var(--array-2, 100px);
+      transition: stroke-dasharray var(--duration) var(--easing, ease) var(--delay, 0s), stroke-dashoffset var(--duration) var(--easing, ease) var(--delay, 0s);
+      stroke-dasharray: var(--array-1, 26px) var(--array-2);
       stroke-dashoffset: var(--offset, 126px);
       transform: translateZ(0);
     }
@@ -238,15 +248,12 @@ header {
 }
 
 .main {
-  margin-top: 134px;
+  margin-top: 27px;
   @media (max-width: $r_desk) {
     margin-top: 100px;
   }
   @media (max-width: $r_800) {
-    margin-top: 85px;
-  }
-  @media (max-width: $r_mob_500) {
-    margin-top: 82px;
+    margin-top: 28px;
   }
   &__info {
     margin-bottom: 90px;
@@ -262,6 +269,9 @@ header {
     }
     @media (max-width: $r_desk_1280) {
       margin-bottom: 4.2rem;
+    }
+    @media (max-width: $r_mob_500) {
+      margin-bottom: 6.5rem;
     }
   }
   &__cover {
@@ -284,6 +294,10 @@ header {
     @media (max-width: $r_800) {
       height: 150px;
     }
+    @media (max-width: $r_mob_500) {
+      width: 340px;
+      height: 215px;
+    }
   }
   &__photo {
     width: 100%;
@@ -302,11 +316,20 @@ header {
     @media (max-width: $r_desk_1280) {
       margin-bottom: 8rem;
     }
+    @media (max-width: $r_mob_500) {
+      margin-bottom: 10rem;
+    }
     &_h2 {
       @include text (2.8rem, $weight:400);
       position: relative;
       @media (max-width: $r_desk_1280) {
         font-size: 2rem;
+      }
+      @media (max-width: $r_tab) {
+        font-size: 1.8rem;
+      }
+      @media (max-width: $r_mob_500) {
+        margin-bottom: 2.4rem;
       }
       &::before {
         content: ' ';
@@ -332,6 +355,12 @@ header {
           width: 150px;
           height: 150px;
           left: -44px;
+        }
+        @media (max-width: $r_mob_500) {
+          width: 135px;
+          height: 135px;
+          left: -52px;
+          top: -28px;
         }
       }
       &::after {
@@ -362,6 +391,11 @@ header {
           left: -11px;
           background-size: 51px 34px;
         }
+        @media (max-width: $r_mob_500) {
+          top: 99px;
+          left: -10px;
+          background-size: 55px 28px;
+        }
       }
     }
   }
@@ -371,17 +405,27 @@ header {
       grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
       padding-bottom: 5.5rem;
+      @media (max-width: $r_mob_500) {
+        padding-bottom: 3.7rem;
+      }
     }
     &__item {
       &-title {
         @include text(1.6rem, $weight:700);
         letter-spacing: 0.03rem;
         text-transform: uppercase;
+        @media (max-width: $r_mob_500) {
+          font-size: 1.2rem;
+          margin: 12px 0;
+        }
       }
       &-text {
         @include text(1.4rem, 2.1rem);
         opacity: .8;
         max-width: 250px;
+        @media (max-width: $r_mob_500) {
+          font-size: 1rem;
+        }
       }
     }
     &__item-1 {
@@ -390,10 +434,16 @@ header {
       @media (max-width: $r_desk) {
         grid-column: 1/3;
       }
+      @media (max-width: $r_mob_500) {
+        grid-column: 1/4;
+      }
     }
     &__item-2 {
       grid-column: 4/5;
       grid-row: 1/2;
+      @media (max-width: $r_mob_500) {
+
+      }
     }
     &__link {
       &-vk {
@@ -401,11 +451,19 @@ header {
         &::after {
           content: '';
           height: 2.4rem;
-          border: 1px solid $font-color;
+          border: 1px solid rgba($font-color, 0.5);
           position: absolute;
           top: 1px;
           right: -31px;
           pointer-events: none;
+          @media (max-width: $r_tab) {
+            height: 1.7rem;
+          }
+          @media (max-width: $r_mob_500) {
+            top: 0;
+            right: -13px;
+            height: 1.5rem;
+          }
         }
       }
       &-inst {
@@ -413,11 +471,19 @@ header {
         &::after {
           content: '';
           height: 2.4rem;
-          border: 1px solid $font-color;
+          border: 1px solid rgba($font-color, 0.5);
           position: absolute;
           top: 1px;
           right: -31px;
           pointer-events: none;
+          @media (max-width: $r_tab) {
+            height: 1.7rem;
+          }
+          @media (max-width: $r_mob_500) {
+            top: 0;
+            right: -13px;
+            height: 1.5rem;
+          }
         }
       }
     }
@@ -428,6 +494,9 @@ header {
       gap: 56px;
       margin: 0;
       position: relative;
+      @media (max-width: $r_mob_500) {
+        gap: 20px;
+      }
       &::after {
         content: "";
         width: 10.6rem;
@@ -438,6 +507,16 @@ header {
         right: 39px;
         border-radius: 100%;
         z-index: -1;
+        @media (max-width: $r_mob_500) {
+          width: 6rem;
+          height: 6rem;
+          top: -24px;
+          right: 26px;
+        }
+        @media (max-width: $r_mob_400) {
+          top: -23px;
+          right: 37px;
+        }
       }
       &-item {
         list-style-type: none;
@@ -450,6 +529,9 @@ header {
         &:hover {
           color: $red;
           text-shadow: $main-color 1px 1px 1px;
+        }
+        @media (max-width: $r_tab) {
+          font-size: 1.2rem;
         }
       }
     }
@@ -473,6 +555,9 @@ header {
         grid-template-rows: repeat(2, 1fr);
         padding-top: 27px;
         padding-bottom: 0;
+      }
+      @media (max-width: $r_mob_500) {
+        padding-top: 30px;
       }
     }
     &__item-3 {
@@ -514,6 +599,13 @@ header {
   @media (max-width: $r_desk) {
     padding-top: 55px;
   }
+  @media (max-width: $r_mob_500) {
+    padding-top: 45px;
+    padding-bottom: 60px;
+  }
+  @media (max-width: $r_mob_360) {
+    padding-top: 5px;
+  }
   &-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -524,6 +616,10 @@ header {
     }
     @media (max-width: $r_tab_900) {
       grid-template-rows: 50px 160px;
+    }
+    @media (max-width: $r_mob_500) {
+      gap: 0;
+      grid-template-rows: 50px 150px;
     }
     &__title {
       @include text(2.8rem, $weight:700);
@@ -536,6 +632,9 @@ header {
       @media (max-width:$r_tab_900) {
         margin-bottom: 0;
       }
+      @media (max-width: $r_mob_500) {
+        font-size: 1.6rem;
+      }
     }
     &__description {
       @include text(2.8rem, 4.2rem, $weight:400);
@@ -546,6 +645,10 @@ header {
       @media (max-width:$r_desk) {
         font-size: 1.8rem;
         line-height: 3.2rem;
+      }
+      @media (max-width: $r_mob_500) {
+        font-size: 1.6rem;
+        line-height: 23px;
       }
     }
     &__item-1 {
@@ -565,14 +668,24 @@ header {
         grid-column: 1/4;
         grid-row: 2/3;
       }
+      @media (max-width: $r_tab) {
+        grid-column: 1/5;
+      }
     }
   }
   &__bottom {
-    padding-bottom: 16.4rem;
+    padding-bottom: 12.6rem;
     padding-top: 4.4rem;
     @media (max-width: $r_desk_1400) {
       padding-bottom: 1.4rem;
       padding-top: 1.4rem;
+    }
+    @media (max-width: $r_mob_500) {
+      padding-bottom: 5rem;
+      padding-top: 2rem;
+    }
+    @media (max-width: $r_mob_360) {
+      padding-bottom: 4.5rem;
     }
     &-grid {
     display: grid;
@@ -586,7 +699,10 @@ header {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
       }
-    &__item-1 {
+      @media (max-width: $r_mob_500) {
+        gap: 0;
+      }
+      &__item-1 {
       grid-column: 3/4;
       grid-row: 1/2;
         @media (max-width: $r_desk) {
@@ -621,32 +737,63 @@ header {
   }
     &_title {
       @include text(1.6rem, 3.2rem, $weight:700);
+      @media (max-width: $r_mob_500) {
+        font-size: 1.2rem;
+      }
     }
     &_desc {
       @include text(1.4rem, 2.1rem);
       opacity: .8;
       max-width: 270px;
+      @media (max-width: $r_mob_500) {
+        max-width: 137px;
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
     }
   }
   &__order {
     &_title {
       @include text(2.8rem, 4.2rem, $weight:400);
       margin: 3rem 0 2.8rem 0;
+      @media (max-width: $r_tab_900) {
+        font-size: 1.6rem;
+      }
+      @media (max-width: $r_mob_500) {
+        margin: 17px 0;
+        line-height: 24px;
+      }
+      @media (max-width: $r_mob_360) {
+        font-size: 1.4rem;
+      }
     }
     &_number {
       padding-right: 3.3rem;
       @media (max-width: $r_desk) {
         padding-right: 1.2rem;
       }
+      @media (max-width: $r_mob_500) {
+        padding-right: 0.5rem;
+      }
     }
     &_desc {
       font-size: 1.6rem;
       opacity: .8;
+      line-height: 150%;
+      @media (max-width: $r_tab_900) {
+        font-size: 1.2rem;
+      }
+      @media (max-width: $r_mob_360) {
+        margin: 0;
+      }
     }
     &-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
+      @media (max-width: $r_mob_500) {
+        gap: 0;
+      }
       &__item-1 {
         grid-column: 1/3;
       }
@@ -681,7 +828,6 @@ header {
   cursor: pointer;
   transition-timing-function: ease-out;
   position: relative;
-  //animation: red-shadow 10s 10;
   &::after {
     content: "";
     width: 1px;
@@ -697,6 +843,20 @@ header {
   &:hover::after {
     opacity: 1;
     width: 171px;
+    @media (max-width: $r_tab) {
+      width: 136px;
+    }
+    @media (max-width: $r_mob_500) {
+      width: 119px;
+    }
+  }
+  @media (max-width: $r_tab) {
+    font-size: 1.2rem;
+  }
+  @media (max-width: $r_mob_500) {
+    line-height: 1.8rem;
+    padding-right: 17px;
+    background-size: 10px;
   }
 }
 
@@ -715,6 +875,13 @@ header {
   @media (max-width: $r_800) {
     font-size: 2.8rem;
   }
+  @media (max-width: $r_mob_500) {
+    font-size: 2.8rem;
+    letter-spacing: 0.1rem;
+  }
+  @media (max-width: $r_mob_360) {
+    font-size: 2.4rem;
+  }
 }
 
 .portfolio {
@@ -722,6 +889,12 @@ header {
   position: relative;
   @media (max-width: $r_desk_1400) {
     margin-bottom: 50px;
+  }
+  @media (max-width: $r_mob_500) {
+    margin-bottom: 78px;
+  }
+  &__catalog-text {
+    margin-bottom: 27px;
   }
   &::before {
     content: "";
@@ -736,6 +909,9 @@ header {
     @media (max-width: $r_desk) {
       top: 143px;
     }
+    @media (max-width: $r_mob_500) {
+      top: 103px;
+    }
   }
   &__main-title {
     @include text(7.4rem, $weight:700);
@@ -749,6 +925,10 @@ header {
     @media (max-width: $r_desk) {
       font-size: 5rem;
       margin: 21px 0 112px 0;
+    }
+    @media (max-width: $r_mob_500) {
+      font-size: 2.8rem;
+      margin: 21px 0 100px 0;
     }
     &::after {
       content: "";
@@ -773,6 +953,15 @@ header {
         top: -80px;
         left: 268px;
       }
+      @media (max-width: $r_mob_500) {
+        width: 197px;
+        height: 197px;
+        top: -35px;
+        left: 145px;
+      }
+      @media (max-width: $r_mob_360) {
+        left: 122px;
+      }
     }
   }
   &-grid {
@@ -786,11 +975,24 @@ header {
     @media (max-width: $r_desk) {
       margin: 30px 0;
     }
+    @media (max-width: $r_tab) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+    @media (max-width: $r_mob_500) {
+      margin: 30px 0 25px 0;
+    }
     &__item-1 {
       grid-column: 1/3;
+      @media (max-width: $r_tab) {
+        grid-column: 1/2;
+      }
     }
     &__item-2 {
       grid-column: 3/5;
+      @media (max-width: $r_tab) {
+        grid-column: 1/2;
+      }
     }
   }
   &__cover {
@@ -798,6 +1000,11 @@ header {
     height: 315px;
     position: relative;
     overflow: hidden;
+    @media (max-width: $r_mob_500) {
+      max-width: 340px;
+      width: 100%;
+      height: 190px;
+    }
     &-img {
       width: 100%;
       height: 315px;
@@ -809,23 +1016,34 @@ header {
       @media (max-width: $r_desk) {
         object-fit: contain;
       }
+      @media (max-width: $r_mob_500) {
+        height: 190px;
+      }
     }
   }
   &__title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    line-height: 4.2rem;
+    @include text(2.8rem, 4.2rem, 700);
     margin: 40px 0;
+    @media (max-width: $r_mob_500) {
+      font-size: 1.6rem;
+      margin: 0;
+    }
   }
   &__list {
     padding-left: 0;
+    @media (max-width: $r_mob_500) {
+      margin-bottom: 0;
+    }
     &-item {
-      font-weight: 400;
+      @include text(1.6rem, 2.4rem, 400);
       list-style-type: none;
-      font-size: 1.6rem;
-      line-height: 2.4rem;
       opacity: .8;
       height: 3.4rem;
+      @media (max-width: $r_mob_500) {
+        font-size: 1.2rem;
+        line-height: 10px;
+        margin-bottom: 0;
+      }
     }
   }
   &__desc {
@@ -834,6 +1052,10 @@ header {
     font-weight: 700;
     opacity: .8;
     margin: 30px 0;
+    @media (max-width: $r_mob_500) {
+      font-size: 1.2rem;
+      margin: 0;
+    }
   }
 }
 
@@ -852,8 +1074,16 @@ header {
       margin-top: 0;
       margin-bottom: 50px;
     }
-    @media (max-width: $r_desk) {
+    @media (max-width: $r_tab_900) {
+      font-size: 2rem;
     }
+    @media (max-width: $r_mob_500) {
+      font-size: 1.6rem;
+      max-width: 320px;
+      line-height: 2.4rem;
+      margin-bottom: 38px;
+    }
+
   }
   &-grid {
     display: grid;
@@ -871,12 +1101,25 @@ header {
     @media (max-width: $r_desk) {
       grid-template-columns: repeat(2, 1fr);
     }
+    @media (max-width: $r_tab) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @media (max-width: $r_mob_500) {
+      margin-top: 10px;
+      gap: 0;
+    }
     &__item {
       background-repeat: no-repeat;
       display: flex;
       gap: 40px;
       @media (max-width: $r_desk_hd) {
         gap: 10px;
+      }
+      @media (max-width: $r_tab) {
+        gap: 40px;
+      }
+      @media (max-width: $r_mob_500) {
+        gap: 30px;
       }
       &::before {
         content: '';
@@ -894,6 +1137,10 @@ header {
           margin: auto 0;
           background-image: url("../images/cil-money.svg");
           background-size: 40px 40px;
+          background-repeat: no-repeat;
+          @media (max-width: $r_mob_500) {
+            background-size: 30px 30px;
+          }
         }
       }
       &-2 {
@@ -905,6 +1152,10 @@ header {
           margin: auto 0;
           background-image: url("../images/image-plus.svg");
           background-size: 40px 40px;
+          background-repeat: no-repeat;
+          @media (max-width: $r_mob_500) {
+            background-size: 30px 30px;
+          }
         }
       }
       &-3 {
@@ -916,6 +1167,10 @@ header {
           margin: auto 0;
           background-image: url("../images/clock-history.svg");
           background-size: 40px 40px;
+          background-repeat: no-repeat;
+          @media (max-width: $r_mob_500) {
+            background-size: 30px 30px;
+          }
         }
       }
       &-4 {
@@ -927,6 +1182,10 @@ header {
           margin: auto 0;
           background-image: url("../images/telephone.svg");
           background-size: 40px 40px;
+          background-repeat: no-repeat;
+          @media (max-width: $r_mob_500) {
+            background-size: 30px 30px;
+          }
         }
       }
       &-5 {
@@ -938,6 +1197,10 @@ header {
           margin: auto 0;
           background-image: url("../images/code.svg");
           background-size: 40px 40px;
+          background-repeat: no-repeat;
+          @media (max-width: $r_mob_500) {
+            background-size: 30px 30px;
+          }
         }
       }
       &-6 {
@@ -949,20 +1212,34 @@ header {
           margin: auto 0;
           background-image: url("../images/file-img.svg");
           background-size: 40px 40px;
+          background-repeat: no-repeat;
+          @media (max-width: $r_mob_500) {
+            background-size: 30px 30px;
+          }
         }
       }
     }
     &__title {
-      font-weight: 600;
-      font-size: 1.6rem;
-      line-height: 1.9rem;
+      @include text(1.6rem, 1.9rem, 600);
       margin: 28px 0 10px 0;
+      @media (max-width: $r_mob_500) {
+        font-size: 1.2rem;
+        margin: 23px 0 10px 0;
+      }
     }
     &__desc {
       font-size: 1.4rem;
       line-height: 2.1rem;
       opacity: .8;
       max-width: 228px;
+      @media (max-width: $r_tab) {
+        max-width: 100%;
+      }
+      @media (max-width: $r_mob_500) {
+        font-size: 1.2rem;
+        max-width: 250px;
+        margin-bottom: 0;
+      }
     }
   }
   &-technology {
@@ -976,12 +1253,12 @@ header {
       line-height: 1.5rem;
       text-align: center;
       padding:  3.3rem 0;
-      //background-image: url("../images/rectangle.svg");
       background-color: $red;
       background-repeat: no-repeat;
       z-index: 1;
+      opacity: 0;
       visibility: hidden;
-      transition: .5s;
+      transition: 0.55s opacity, 0.55s visibility;
       &::before {
         content: "";
         border: 10px solid transparent;
@@ -1007,9 +1284,13 @@ header {
       margin: 0 auto;
       filter: grayscale(1);
       transition: .3s;
-      //&:hover {
-      //  filter: grayscale(0);
-      //}
+      @media (max-width: $r_mob_500) {
+        width: 75px;
+        height: 66px;
+      }
+      @media (max-width: $r_mob_360) {
+        width: 66px;
+      }
       &:hover .more-technology__tooltip {
         visibility: visible;
         transition: .3s;
@@ -1018,36 +1299,84 @@ header {
       &_html {
         background-image: url("../images/html5.svg");
         background-size: 77px 84px;
+        @media (max-width: $r_tab) {
+          background-size: 50px 50px;
+        }
+        @media (max-width: $r_mob_500) {
+          background-size: 25px 25px;
+        }
       }
       &_css {
         background-image: url("../images/css-logo.svg");
         background-size: 82px 85px;
+        @media (max-width: $r_tab) {
+          background-size: 50px 50px;
+        }
+        @media (max-width: $r_mob_500) {
+          background-size: 21px 23px;
+        }
       }
       &_js {
         background-image: url("../images/js-logo.svg");
         background-size: 82px 75px;
+        @media (max-width: $r_tab) {
+          background-size: 50px 50px;
+        }
+        @media (max-width: $r_mob_500) {
+          background-size: 22px 22px;
+        }
       }
       &_jquery {
         background-image: url("../images/jquery.svg");
         background-size: 76px 82px;
+        @media (max-width: $r_tab) {
+          background-size: 50px 50px;
+        }
+        @media (max-width: $r_mob_500) {
+          background-size: 23px 23px;
+        }
       }
       &_bootstrap {
         background-image: url("../images/bootstrap.svg");
         background-size: 72px 72px;
         background-position: center;
+        @media (max-width: $r_tab) {
+          background-size: 50px 50px;
+        }
+        @media (max-width: $r_mob_500) {
+          background-size: 22px 22px;
+        }
       }
       &_php {
         background-image: url("../images/php.svg");
         background-size: 103px 80px;
+        @media (max-width: $r_tab) {
+          background-size: 75px 50px;
+        }
+        @media (max-width: $r_mob_500) {
+          background-size: 32px 17px;
+        }
       }
       &_vue-js {
         background-image: url("../images/vue-js.svg");
         background-size: 81px 70px;
         background-position: center;
+        @media (max-width: $r_tab) {
+          background-size: 50px 50px;
+        }
+        @media (max-width: $r_mob_500) {
+          background-size: 27px 22px;
+        }
       }
       &_wordpress {
         background-image: url("../images/wordpress.svg");
         background-size: 74px 74px;
+        @media (max-width: $r_tab) {
+          background-size: 50px 50px;
+        }
+        @media (max-width: $r_mob_500) {
+          background-size: 23px 23px;
+        }
       }
     }
     &-grid {
@@ -1059,6 +1388,13 @@ header {
       @media (max-width:$r_desk_1280) {
         margin-bottom: 45px;
       }
+      @media (max-width: $r_tab) {
+        grid-template-rows: 10.7rem 10.7rem;
+      }
+      @media (max-width: $r_mob_500) {
+        grid-template-rows: 4.5rem 4.5rem;
+        padding: 0 10px;
+      }
       &__item {
         list-style-type: none;
         border: 1px solid rgba($font-color, .5);
@@ -1067,13 +1403,15 @@ header {
         position: relative;
         &:hover .more-technology__tooltip {
           visibility: visible;
-           transition: .3s ease 0s;
-           bottom: -120px;
+          opacity: 1;
+          transition: .3s ease 0s;
+          bottom: -120px;
         }
       }
     }
   }
 }
+
 .more-technology-grid__item:hover .more-technology__link {
   filter: grayscale(0);
 }
@@ -1083,6 +1421,12 @@ header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
+    @media (max-width: $r_tab) {
+      flex-direction: column;
+    }
+    @media (max-width: $r_mob_500) {
+      margin-bottom: 25px;
+    }
   &_title{
     @include text(2.8rem, $weight:700);
     text-transform: uppercase;
@@ -1100,9 +1444,24 @@ header {
       top: -54px;
       right: 59px;
       z-index: -1;
+      @media (max-width: $r_tab) {
+        right: 0;
+        left: -73px;
+      }
+      @media (max-width: $r_mob_500) {
+        width: 138px;
+        height: 138px;
+        top: -60px;
+        left: -80px;
+      }
     }
     @media (max-width:$r_tab_900) {
       font-size: 2rem;
+    }
+    @media (max-width: $r_mob_500) {
+      font-size: 1.6rem;
+      margin-top: 2.6rem;
+      margin-bottom: 2.3rem;
     }
   }
     &_desc {
@@ -1113,6 +1472,12 @@ header {
         font-size: 2rem;
         line-height: 3.2rem;
       }
+      @media (max-width: $r_mob_500) {
+        font-size: 1.6rem;
+        margin: 0;
+        opacity: .8;
+        line-height: 2.5rem;
+      }
     }
   }
   &-grid {
@@ -1121,8 +1486,21 @@ header {
     margin-top: 36px;
     margin-bottom: 16px;
     gap: 1.6rem;
+    &:last-child {
+      @media (max-width: $r_mob_500) {
+        border-bottom: 1px solid ;
+        padding-bottom: 2.6rem;
+      }
+    }
     @media (max-width: $r_desk_1500) {
       margin: 0 0 27px 0;
+    }
+    @media (max-width: $r_mob_500) {
+      margin: 25px 0 36px 0;
+    }
+    @media (max-width: $r_mob_400) {
+      margin: 25px 0 29px 0;
+      gap: 0;
     }
     &__item-1 {
       grid-column: 1/3;
@@ -1133,6 +1511,14 @@ header {
     &__title {
       @include text(2.8rem, 4.2rem, $weight:400);
       letter-spacing: 0.04rem;
+      @media (max-width: $r_tab) {
+        font-size: 1.6rem;
+      }
+      @media (max-width: $r_mob_500) {
+        line-height: 25px;
+        margin-bottom: 2.1rem;
+        max-width: 113px;
+      }
     }
     &__desc {
       font-size: 1.6rem;
@@ -1140,10 +1526,22 @@ header {
       @media (max-width: $r_desk) {
         margin-bottom: 54px;
       }
+      @media (max-width: $r_tab) {
+        font-size: 1rem;
+      }
+      @media (max-width: $r_mob_500) {
+        margin-bottom: 15px;
+        max-width: 111px;
+        line-height: 1.4rem;
+      }
     }
     &__topic {
       @include text(1.6rem, 2.4rem, $weight:700);
       margin: 23px 0 19px 0;
+      @media (max-width: $r_mob_500) {
+        font-size: 1.2rem;
+        margin: 12px 0 12px 0;
+      }
     }
     &__list {
       list-style-type: none;
@@ -1154,6 +1552,7 @@ header {
         display: flex;
         align-items: center;
         gap: 1.2rem;
+        opacity: .8;
         &::before {
           content: '';
           width: 4px;
@@ -1161,6 +1560,15 @@ header {
           display: block;
           border-radius: 100%;
           background-color: $font-color;
+          @media (max-width: $r_mob_500) {
+            width: 2px;
+            height: 2px;
+          }
+        }
+        @media (max-width: $r_mob_500) {
+          font-size: 1.2rem;
+          line-height: 2.4rem;
+          gap: 5px;
         }
       }
     }
@@ -1169,13 +1577,16 @@ header {
       font-weight: 700;
       line-height: 6.3rem;
       position: relative;
-      //animation: shadow 10s infinite;
       @media (max-width: $r_desk_1280) {
         font-size: 3.2rem;
       }
       @media (max-width: $r_desk) {
         margin-bottom: 0;
         font-size: 2.8rem;
+      }
+      @media (max-width: $r_mob_500) {
+        font-size: 2.2rem;
+        line-height: 3.3rem;
       }
       &_before::before {
         content: '';
@@ -1188,6 +1599,12 @@ header {
         position: absolute;
         top: -13px;
         left: -45px;
+        @media (max-width: $r_mob_500) {
+          width: 40px;
+          height: 40px;
+          top: -3px;
+          left: -20px;
+        }
       }
     }
   }
@@ -1209,64 +1626,27 @@ header {
     @media (max-width:$r_desk_1400) {
       margin-bottom: 65px;
     }
+    @media (max-width: $r_mob_500) {
+      margin-bottom: 0;
+    }
   }
   &-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin-top: 60px;
-    margin-bottom: 50px;
-    gap: 2rem;
-    @media (max-width: $r_desk_1500) {
-      margin-top: 50px;
-    }
-    @media (max-width: $r_desk_1280) {
-      margin-top: 30px;
-    }
-    @media (max-width: $r_tab) {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 130px 130px 10px 30px;
-    }
-    &__item-1 {
-      grid-column: 1/3;
-      @media (max-width: $r_tab) {
-        &-top {
-          grid-row: 1/2;
-        }
-      }
-      &_bottom {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        @media (max-width: $r_tab) {
-          grid-column: 1/3;
-          grid-row: 4/5;
-          flex-direction: row;
-          justify-content: center;
-        }
-      }
-
-    }
-    &__item-2 {
-      grid-column: 3/5;
-      @media (max-width: $r_tab) {
-        &-top {
-          grid-row: 2/3;
-        }
-        grid-column: 1/3;
-        grid-row: 1/2;
-      }
-    }
     &__link {
       &-vk {
         position: relative;
         &::after {
           content: '';
           height: 2.4rem;
-          border: 1px solid $font-color;
+          border: 1px solid rgba($font-color, .5);
           position: absolute;
           top: 1px;
           right: -31px;
           pointer-events: none;
+          @media (max-width: $r_mob_500) {
+            height: 1.5rem;
+            top: 0;
+            right: -17px;
+          }
         }
       }
       &-inst {
@@ -1274,11 +1654,16 @@ header {
         &::after {
           content: '';
           height: 2.4rem;
-          border: 1px solid $font-color;
+          border: 1px solid rgba($font-color, .5);
           position: absolute;
           top: 1px;
           right: -31px;
           pointer-events: none;
+          @media (max-width: $r_mob_500) {
+            height: 1.5rem;
+            top: 0;
+            right: -11px;
+          }
         }
       }
     }
@@ -1288,6 +1673,9 @@ header {
       gap: 56px;
       margin: 0;
       position: relative;
+      @media (max-width: $r_mob_500) {
+        gap: 26px;
+      }
       &-item {
         list-style-type: none;
       }
@@ -1297,6 +1685,9 @@ header {
         font-size: 1.6rem;
         text-transform: capitalize;
         transition: .3s;
+        @media (max-width: $r_mob_500) {
+          font-size: 1.2rem;
+        }
         &:hover {
           color: $red;
           text-shadow: $main-color 1px 1px 1px;
@@ -1305,8 +1696,15 @@ header {
     }
     &__title {
       @include text(2.8rem, 4.2rem, $weight:700);
+      text-transform: uppercase;
       letter-spacing: 0.08rem;
       position: relative;
+      @media (max-width: $r_mob_500) {
+        font-size: 1.6rem;
+        line-height: 26px;
+        margin-top: 27px;
+        margin-bottom: 0;
+      }
       &::before {
         content: '';
         display: block;
@@ -1337,6 +1735,11 @@ header {
         @media (max-width: $r_desk_hd) {
           background-size: 45px 45px;
         }
+        @media (max-width: $r_mob_500) {
+          background-size: 39px 31px;
+          top: -43px;
+          left: 92px;
+        }
       }
       &::after {
         content: '';
@@ -1366,7 +1769,12 @@ header {
           width: 150px;
           height: 150px;
         }
-
+        @media (max-width: $r_mob_500) {
+          width: 190px;
+          height: 190px;
+          top: -51px;
+          left: -55px;
+        }
       }
     }
     &__description {
@@ -1377,7 +1785,94 @@ header {
         font-size: 2.4rem;
         line-height: 3.5rem;
       }
-      @media (max-width: $r_desk) {
+      @media (max-width: $r_mob_500) {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        margin-top: 8px;
+        max-width: 280px;
+      }
+    }
+  }
+  &-grid__top {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 60px;
+    margin-bottom: 50px;
+    gap: 2rem;
+    @media (max-width: $r_desk_1500) {
+      margin-top: 50px;
+    }
+    @media (max-width: $r_desk_1280) {
+      margin-top: 30px;
+    }
+    @media (max-width: $r_tab) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 130px 130px 10px 30px;
+    }
+    @media (max-width: $r_mob_500) {
+      margin-bottom: 1.7rem;
+      grid-template-rows: 70px 115px;
+    }
+    &-item-1 {
+      grid-column: 1/3;
+      @media (max-width: $r_tab) {
+        grid-row: 1/2;
+      }
+    }
+    &-item-2 {
+      grid-column: 3/5;
+      @media (max-width: $r_tab) {
+        grid-column: 1/3;
+        grid-row: 2/3;
+      }
+    }
+  }
+  &-grid__bottom {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 60px;
+    margin-bottom: 50px;
+    gap: 2rem;
+    @media (max-width: $r_desk_1500) {
+      margin-top: 50px;
+    }
+    @media (max-width: $r_desk_1280) {
+      margin-top: 30px;
+    }
+    @media (max-width: $r_tab) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 130px 130px 10px 30px;
+    }
+    @media (max-width: $r_mob_500) {
+      margin-bottom: 25px;
+      margin-top: 37px;
+      grid-template-rows: 300px 50px;
+      gap: 2.5rem;
+    }
+    &-item-1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      @media (max-width: $r_tab) {
+        grid-column: 1/3;
+        grid-row: 4/5;
+        flex-direction: row;
+        justify-content: center;
+      }
+      @media (max-width: $r_mob_500) {
+        grid-row: 2/3;
+      }
+    }
+    &-item-2 {
+      grid-column: 3/5;
+      @media (max-width: $r_desk_1100) {
+        grid-column: 2/5;
+      }
+      @media (max-width: $r_tab) {
+        grid-column: 1/3;
+        grid-row: 1/2;
+      }
+      @media (max-width: $r_mob_500) {
 
       }
     }
@@ -1386,6 +1881,9 @@ header {
 
 .card {
   flex-basis: 560px;
+  @media (max-width: $r_mob_400) {
+    padding: 0 5px;
+  }
   &__label {
     font-size: 1.2rem;
     line-height: 1.8rem;
@@ -1406,6 +1904,9 @@ header {
     @media (max-width: $r_mob_650) {
       padding: 28px 21px;
       margin: 10px 0 15px 0;
+    }
+    @media (max-width: $r_mob_500) {
+      margin: 7px 0 15px 0;
     }
     &::placeholder {
       font-size: 1.2rem;
@@ -1437,118 +1938,6 @@ header {
   }
 }
 
-.drop {
-  display:inline-block;
-  position: relative;
-  width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 40px;
-  input[type="checkbox"]{
-    display:none;
-    &:checked {
-      ~.drop-items{
-        opacity:1;
-        max-height: 400px;
-      }
-      ~.control {
-        z-index:99;
-        &:after  {
-          transform: rotate(180deg);
-        }
-      }
-      ~.overlay-close {
-        transform: none;
-        pointer-events:initial;
-      }
-    }
-  }
-
-  .control{
-    font-size: 1.2rem;
-    position:relative;
-    color: $font-color;
-    display:block;
-    cursor: pointer;
-    padding: 27px 10px 23px 18px;
-    background-color: rgba($font-color, .1);
-    transition: all .3s ease;
-    @media (max-width: $r_mob_650) {
-      font-size: 1rem;
-      padding: 20px 10px 23px 18px;
-    }
-    &:after{
-      content:"";
-      display:inline-block;
-      height: 1.2rem;
-      width: 1.2rem;
-      position: absolute;
-      top: 29px;
-      right: 24px;
-      background-image: url("../images/input-arrow.svg");
-      background-repeat:no-repeat;
-      background-position: center;
-      background-size: contain;
-      transition: transform .3s ease;
-    }
-  }
-  .drop-items {
-    position: absolute;
-    top: 96%;
-    width: 100%;
-    padding:0;
-    margin:0;
-    transition: all .3s ease;
-    background: $main-color;
-    box-shadow: 0 2px 6px rgba(0,0,0,.15);
-    overflow:hidden;
-    max-height:0;
-    opacity:0;
-    z-index:99;
-    .item-drop {
-      //list-style:none;
-      background-color: rgba($font-color, .1);
-      a {
-        font-size: 1.2rem;
-        display:block;
-        color: rgba($font-color, .2);
-        text-decoration: none;
-        padding: 0 10px 13px 21px;
-        transition: all .3s ease;
-        @media (max-width: $r_mob_650) {
-          font-size: 1rem;
-        }
-        &:hover {
-          color: rgba($font-color, 1);
-        }
-      }
-    }
-    .item-drop:last-child {
-      padding-bottom: 2px;
-    }
-  }
-
-  .overlay-close {
-    position: fixed;
-    top:0;
-    left:0;
-    bottom:0;
-    right:0;
-    z-index:9;
-    transform: translate(100%,0);
-    pointer-events:none;
-  }
-}
-
-.drop-items-select {
-  height: 65px;
-  width: 100%;
-  outline: 0;
-  color: $font-color;
-  background-color: rgba($font-color, .1);
-  cursor: pointer;
-  border:none;
-}
-
 .select {
   width: 100%;
   position: relative;
@@ -1573,6 +1962,10 @@ header {
     padding: 0 1rem 0 2rem;
     cursor: pointer;
     margin-bottom: 3.9rem;
+    @media (max-width: $r_mob_500) {
+      height: 55px;
+      margin-bottom: 2.9rem;
+    }
   }
   &__dropdown {
     display: none;
@@ -1609,6 +2002,10 @@ header {
     position: absolute;
     top: 31px;
     right: 25px;
+    @media (max-width: $r_mob_500) {
+      top: 25px;
+      right: 25px;
+    }
   }
 }
 
@@ -1625,6 +2022,96 @@ header {
     padding-top: 5.1rem;
     padding-bottom: 2.3rem;
     width: 100%;
+    @media (max-width: $r_tab) {
+      flex-direction: column-reverse;
+    }
+    @media (max-width: $r_mob_500) {
+      padding-top: 3.2rem;
+    }
+  }
+  &__navigation {
+    flex-basis: 50%;
+    @media (max-width: $r_desk_1100) {
+      flex-basis: 60%;
+    }
+  }
+  &__nav{
+    display: flex;
+    padding-left: 0;
+    gap: 2.84rem;
+    @media (max-width: $r_desk) {
+      gap: 1.4rem;
+    }
+    @media (max-width: $r_tab) {
+      justify-content: center;
+    }
+    @media (max-width: $r_mob_360) {
+      gap: 0.3rem;
+    }
+  }
+  &__item {
+    list-style-type: none;
+    &_tel {
+      list-style-type: none;
+      position: relative;
+      &::after {
+        content: '';
+        height: 2.4rem;
+        border: 1px solid rgba($font-color, 0.5);
+        position: absolute;
+        top: -1px;
+        right: -13px;
+
+      }
+    }
+    &_mail {
+      list-style-type: none;
+    }
+  }
+  &__link {
+    @include text(1.4rem, 2.1rem, $color:$font-color);
+    text-decoration: none;
+    transition: .3s;
+    &:hover {
+      color: $red;
+    }
+    @media (max-width: $r_mob_500) {
+      font-size: 1rem;
+    }
+  }
+  &__info {
+    display: flex;
+    padding-left: 0;
+    flex-basis: 30%;
+    justify-content: flex-end;
+    gap: 2.5rem;
+    margin-top: 1.2rem;
+    letter-spacing: 0.06px;
+    @media (max-width: $r_desk_1100) {
+      flex-basis: 40%;
+    }
+    @media (max-width: $r_tab) {
+      justify-content: center;
+    }
+    @media (max-width: $r_mob_500) {
+      margin-bottom: 1.6rem;
+    }
+  }
+  &__tel {
+    @include text(1.4rem, 2.1rem, $color:$font-color);
+    text-decoration: none;
+    transition: .3s;
+    &:hover {
+      color: $red;
+    }
+  }
+  &__mail {
+    @include text(1.4rem, 2.1rem, $color:$font-color);
+    text-decoration: none;
+    transition: .3s;
+    &:hover {
+      color: $red;
+    }
   }
   &__bottom {
     display: flex;
@@ -1633,6 +2120,14 @@ header {
     font-size: 1.2rem;
     line-height: 1.8rem;
     margin-top: 6px;
+    @media (max-width: $r_mob_600) {
+      font-size: 1rem;
+      flex-direction: column;
+      text-align: center;
+    }
+    @media (max-width: $r_mob_500) {
+      margin-top: 0;
+    }
     &-item {
       margin: 0;
     }
@@ -1649,51 +2144,6 @@ header {
   }
 }
 
-@keyframes shadow {
-  0% {
-    text-shadow: #232326 1px 1px 1px;
-  }
-  40% {
-    text-shadow: 2px 4px 5px rgba(35, 35, 38, 20);
-  }
-  50% {
-    text-shadow: 5px 4px 5px rgba(35, 35, 38, 20);
-  }
-  100% {
-    text-shadow: #232326 1px 1px 1px;
-  }
-}
-
-@keyframes red-shadow {
-  0% {
-    text-shadow: #232326 1px 1px 1px;
-  }
-  30% {
-    text-shadow: 1px 2px 3px rgba(212, 0, 0, 10);
-  }
-  40%  {
-    text-shadow: 2px 3px 3px rgba(212, 0, 0, 20);
-  }
-  50% {
-    text-shadow: 2px 3px 4px  rgba(212, 0, 0, 30);
-  }
-  60% {
-    text-shadow: 3px 3px 5px  rgba(212, 0, 0, 40);
-  }
-  70% {
-    text-shadow: 2px 3px 4px  rgba(212, 0, 0, 30);
-  }
-  80% {
-    text-shadow: 2px 3px 3px rgba(212, 0, 0, 20);
-  }
-  90% {
-    text-shadow: 1px 2px 3px rgba(212, 0, 0, 10);
-  }
-  100% {
-    text-shadow: #232326 1px 1px 1px;
-  }
-}
-
 .modal {
   position: fixed;
   top: 0;
@@ -1703,6 +2153,7 @@ header {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 500;
   visibility: hidden;
+  transition: opacity .3s, visibility 0s linear .3s;
   &__btn {
     @media (max-width: $r_mob_360) {
       padding: 20px 80px;
@@ -1833,96 +2284,116 @@ header {
 }
 
 .modal-menu {
+  --array-2: 100px;
   position: fixed;
-  top: 0;
+  top: 9000px;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 500;
-  overflow: scroll;
+  background-color: $main-color;
+  z-index: 300;
+  transition: all 0.5s ease 0s;
+  @media (min-width: 769px) {
+    display: none;
+  }
   &__container {
     background-color: $main-color;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   &__items {
     max-width: 340px;
+    margin: 0 auto;
   }
   &__list {
     list-style-type: none;
+    font-size: 2.6rem;
+    padding-left: 0;
+    text-align: center;
+  }
+  &__list-item {
+    border-top: 1px solid rgba($font-color, 0.2);
+    padding: 2rem 0;
+  }
+  &__list_contacts {
+    display: flex;
+    justify-content: space-between;
+    max-width: 270px;
+    margin: 3rem auto 0;
+  }
+  &__list-item:last-child {
+    border-bottom: 1px solid rgba($font-color, 0.2);
+  }
+  &__list_link {
+    line-height: 39px;
+  }
+  &__list_phone {
+    color: $font-color;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 150%;
+    position: relative;
+    transition: .3s;
+    &:hover {
+      color: $red;
+    }
+    &:after {
+      content: "";
+      height: 2.4rem;
+      border: 1px solid rgba($font-color, 0.2);
+      position: absolute;
+      top: -1px;
+      right: -13px;
+      pointer-events: none;
+    }
+  }
+  &__list_mail {
+    color: $font-color;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 150%;
+    transition: .3s;
+    &:hover {
+      color: $red;
+    }
   }
   &__list_link,
   .modal-menu__list_social {
     color: $font-color;
     text-decoration: none;
-  }
-  &__list_phone {
-    color: $font-color;
-    text-decoration: none;
-  }
-  &__list_mail {
-    color: $font-color;
-    text-decoration: none;
-  }
-  &__close-btn {
-    --color: white;
-    width: 36px;
-    height: 36px;
-    padding: 0;
-    margin: 5px 0 0 0;
-    outline: none;
-    position: relative;
-    border: none;
-    background: none;
-    cursor: pointer;
-    display: none;
-    -webkit-appearence: none;
-    -webkit-tap-highlight-color: transparent;
-    @media (max-width: $r_tab) {
-      display: block;
+    transition: .3s;
+    &:hover {
+      color: $red;
     }
   }
-  &__close-btn svg {
-    width: 64px;
-    height: 48px;
-    top: -6px;
-    left: -14px;
-    stroke: var(--color);
-    stroke-width: 2px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
-    display: block;
+  &__list_socials {
+    display: flex;
+    justify-content: space-around;
+    max-width: 200px;
+    margin: 1rem auto 0;
+  }
+  &__list_social {
+    font-size: 12px;
+    line-height: 150%;
+    text-transform: capitalize;
+    position: relative;
+    &-inst::before {
+      content: "";
+      height: 1.5rem;
+      border: 1px solid rgba($font-color, 0.2);
+      position: absolute;
+      top: -1px;
+      right: -13px;
+      pointer-events: none;
+    }
+    &-inst::after {
+    content: "";
+    height: 1.5rem;
+    border: 1px solid rgba($font-color, 0.2);
     position: absolute;
+    top: -1px;
+    left: -10px;
+    pointer-events: none;
   }
-  &__close-btn svg path {
-    transition: stroke-dasharray var(--duration, .85s) var(--easing, ease) var(--delay, 0s), stroke-dashoffset var(--duration, .85s) var(--easing, ease) var(--delay, 0s);
-    stroke-dasharray: var(--array-1, 26px) var(--array-2, 100px);
-    stroke-dashoffset: var(--offset, 126px);
-    transform: translateZ(0);
-  }
-  &__close-btn svg path:nth-child(2) {
-    --duration: .7s;
-    --easing: ease-in;
-    --offset: 100px;
-    --array-2: 74px;
-  }
-  &__close-btn svg path:nth-child(3) {
-    --offset: 133px;
-    --array-2: 107px;
-  }
-  &__close-btn.modal-menu__close-btn_active svg path {
-    --offset: 57px;
-  }
-  &__close-btn.modal-menu__close-btn_active svg path:nth-child(1), .modal-menu__close-btn.modal-menu__close-btn_active svg path:nth-child(3) {
-    --delay: .15s;
-    --easing: cubic-bezier(.2, .4, .2, 1.1);
-  }
-  &__close-btn.modal-menu__close-btn_active svg path:nth-child(2) {
-    --duration: .4s;
-    --offset: 2px;
-    --array-1: 1px;
-  }
-  &__close-btn.modal-menu__close-btn_active svg path:nth-child(3) {
-    --offset: 58px;
   }
 }

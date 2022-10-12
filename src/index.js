@@ -1,17 +1,35 @@
 import 'normalize.css'
 import './styles/main.scss'
 import {Select} from './select/select'
+import {SelectModal} from './select/selectModal'
+
 
 document.querySelectorAll('.header__burger-btn').forEach(btn => {
     btn.addEventListener('click', e => {
         btn.classList.toggle('header__burger-btn_active');
     });
 });
-document.querySelectorAll('.modal-menu__close-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-        btn.classList.toggle('modal-menu__close-btn_active');
-    });
-});
+
+document.querySelector('.header__burger-btn').addEventListener('click', function (ev) {
+    ev.preventDefault();
+    if (this.classList.contains('header__burger-btn_active')) {
+        // this.classList.add('header__burger-btn_active');
+        // document.querySelector('#header__burger-btn').classList.add('header__burger-btn_active');
+        // document.querySelector("#modal-menu").style.top = "-9000px";
+        // document.getElementById("header__info").style.opacity = "1";
+        document.getElementById("modal-menu").style.top = "53px";
+        document.getElementById("header__info").style.opacity = "0";
+    }
+    else {
+        // this.classList.remove('header__burger-btn_active');
+        // document.querySelector('#header__burger-btn').classList.remove('header__burger-btn_active');
+        // document.getElementById("modal-menu").style.top = "53px";
+        // document.getElementById("header__info").style.opacity = "0";
+        document.querySelector("#modal-menu").style.top = "-9000px";
+        document.getElementById("header__info").style.opacity = "1";
+    }
+})
+
 
 const select = new Select('#select', {
     placeholder: 'Выберите из списка',
@@ -19,12 +37,18 @@ const select = new Select('#select', {
     data: [
         {id: '1', value: 'Telegram'},
         {id: '2', value: 'WatsApp'},
-        {id: '3', value: 'Viber'},
-        {id: '4', value: 'Звонок на телефон'},
-        {id: '5', value: 'SMS сообщение'}
+        {id: '3', value: 'SMS сообщение'},
+        {id: '4', value: 'Звонок на телефон'}
     ]
 })
 
-function closeModal() {
-    document.getElementById("modal-menu").style.top = "-9000px";
-}
+const selectModal = new SelectModal('#selectModal', {
+    placeholder: 'Выберите из списка',
+    // selectedId: '1',
+    data: [
+        {id: '1', value: 'Telegram'},
+        {id: '2', value: 'WatsApp'},
+        {id: '3', value: 'SMS сообщение'},
+        {id: '4', value: 'Звонок на телефон'}
+    ]
+})
