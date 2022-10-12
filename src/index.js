@@ -13,18 +13,10 @@ document.querySelectorAll('.header__burger-btn').forEach(btn => {
 document.querySelector('.header__burger-btn').addEventListener('click', function (ev) {
     ev.preventDefault();
     if (this.classList.contains('header__burger-btn_active')) {
-        // this.classList.add('header__burger-btn_active');
-        // document.querySelector('#header__burger-btn').classList.add('header__burger-btn_active');
-        // document.querySelector("#modal-menu").style.top = "-9000px";
-        // document.getElementById("header__info").style.opacity = "1";
         document.getElementById("modal-menu").style.top = "53px";
         document.getElementById("header__info").style.opacity = "0";
     }
     else {
-        // this.classList.remove('header__burger-btn_active');
-        // document.querySelector('#header__burger-btn').classList.remove('header__burger-btn_active');
-        // document.getElementById("modal-menu").style.top = "53px";
-        // document.getElementById("header__info").style.opacity = "0";
         document.querySelector("#modal-menu").style.top = "-9000px";
         document.getElementById("header__info").style.opacity = "1";
     }
