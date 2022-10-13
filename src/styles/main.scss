@@ -40,6 +40,7 @@ body {
   background-color: $main-color;
   font-family: 'Inter', sans-serif;
   color: $font-color;
+  overflow-x: hidden;
 }
 
 .container {
@@ -297,6 +298,9 @@ header {
     @media (max-width: $r_mob_500) {
       width: 340px;
       height: 215px;
+    }
+    @media (max-width: $r_mob_400) {
+      width: 300px;
     }
   }
   &__photo {
@@ -1120,6 +1124,9 @@ header {
       }
       @media (max-width: $r_mob_500) {
         gap: 30px;
+      }
+      @media (max-width: $r_mob_400) {
+        gap: 15px;
       }
       &::before {
         content: '';

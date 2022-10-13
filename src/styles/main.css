@@ -7,6 +7,7 @@ body {
   background-color: #232326;
   font-family: "Inter", sans-serif;
   color: #F3F2F0;
+  overflow-x: hidden;
 }
 
 .container {
@@ -328,6 +329,11 @@ header {
   .main__cover {
     width: 340px;
     height: 215px;
+  }
+}
+@media (max-width: 400px) {
+  .main__cover {
+    width: 300px;
   }
 }
 .main__photo {
@@ -1396,6 +1402,11 @@ header {
 @media (max-width: 500px) {
   .more-grid__item {
     gap: 30px;
+  }
+}
+@media (max-width: 400px) {
+  .more-grid__item {
+    gap: 15px;
   }
 }
 .more-grid__item::before {
